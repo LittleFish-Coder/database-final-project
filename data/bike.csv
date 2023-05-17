@@ -1,0 +1,143 @@
+StationUID,StationID,AuthorityID,BikesCapacity,ServiceType,SrcUpdateTime,UpdateTime,StationName_Zh_tw,StationName_En,StationAddress_Zh_tw,StationAddress_En,PositionLon,PositionLat,GeoHash
+TNN501305001,501305001,TNN,26,2,2023-05-17T16:39:17+08:00,2023-05-17T16:51:36+08:00,民生轉運站,Minsheng Transfer Station,民生路二段416號旁,"No. 416, Sec. 2, Minsheng Rd.",120.18759,22.99781,wsj6yftgv
+TNN501305002,501305002,TNN,19,2,2023-05-17T16:45:19+08:00,2023-05-17T16:51:36+08:00,海安民族,Hai'an Minzu Rd. Intersection,海安路二段297號前,"No. 297, Sec. 2, Hai'an Rd.",120.19767,22.99841,wsj6z4tr2
+TNN501305003,501305003,TNN,40,2,2023-05-17T16:26:18+08:00,2023-05-17T16:51:36+08:00,海安正興,Hai'an Zhengxing St. Intetersection,海安路二段90號對側,"No. 90, Sec. 2, Hai'an Rd.(Opposite)",120.19644,22.99461,wsj6z4h3k
+TNN501305004,501305004,TNN,45,2,2023-05-17T16:51:17+08:00,2023-05-17T16:51:36+08:00,赤崁樓,Chihkan Tower,赤嵌街9號(對側人行道),"No. 9, Chikan St.(Opposite)",120.20227,22.99752,wsj6z68d7
+TNN501305005,501305005,TNN,20,2,2023-05-17T16:47:16+08:00,2023-05-17T16:51:36+08:00,家庭教育中心,Family Education Center,公園路/公園路175巷(西北側),"Ln. 175, Gongyuan Rd. & Gongyuan Rd. Intersection",120.20639,22.99715,wsj6z6e85
+TNN501305006,501305006,TNN,40,2,2023-05-17T16:48:16+08:00,2023-05-17T16:51:36+08:00,小西門公園,Xiaoximen Park,和意路/永福路一段233巷口(東南側),"Heyi Rd. & Ln. 233, Sec. 1, Yongfu Rd. Intersection(Southeast)",120.19852,22.9884,wsj6z0vvh
+TNN501305007,501305007,TNN,25,2,2023-05-17T16:48:16+08:00,2023-05-17T16:51:36+08:00,臺南市美術館二館,Tainan Art Museum (Building 2),府前路一段與永福路二段口,"Sec. 1, Fuqian Rd. & Sec. 2, Yongfu Rd. Intersection",120.20049,22.99013,wsj6z1pr4
+TNN501305008,501305008,TNN,40,2,2023-05-17T16:51:17+08:00,2023-05-17T16:51:36+08:00,延平郡王祠,Koxinga Shrine,開山路129號(對側人行道),"No. 129, Kaishan Rd.(Opposite)",120.20793,22.98844,wsj6z2utr
+TNN501305009,501305009,TNN,30,2,2023-05-17T16:46:19+08:00,2023-05-17T16:51:36+08:00,臺灣文學館,National Museum of Taiwan Literature,友愛街(臺灣文學館後門),You'ai Stree(National Museum of Taiwan Literature),120.20392,22.99111,wsj6z33uf
+TNN501305013,501305013,TNN,20,2,2023-05-17T16:51:17+08:00,2023-05-17T16:51:36+08:00,頂湖公園,Dinghu Park,湖美二街/西湖街口,Humei 2nd St. & Xihu St. Intersection,120.18189,23.00385,wsj6yg9z1
+TNN501305014,501305014,TNN,20,2,2023-05-17T16:44:05+08:00,2023-05-17T16:51:36+08:00,海安民權,Hai'an Minquan Rd. Intersection,海安路二段193號(對側人行道),"No. 193, Sec. 2, Hai'an Rd.(Opposite)",120.19705,22.99671,wsj6z4kvd
+TNN501305015,501305015,TNN,20,2,2023-05-17T16:51:17+08:00,2023-05-17T16:51:36+08:00,河樂廣場(金華路),The Spring(Jinhua Rd.),金華路三段/中正路口,"Sec. 3, Jinhua Rd. & Zhongzheng Rd. Intersection",120.19335,22.99374,wsj6z1fhh
+TNN501305016,501305016,TNN,16,2,2023-05-17T16:49:05+08:00,2023-05-17T16:51:36+08:00,萬昌街停車場,Wanchang St. Parking Lot,萬昌街87號(對側),"No. 87, Wanchang St.(Opposite)",120.21043,22.99115,wsj6z3qt4
+TNN501305017,501305017,TNN,20,2,2023-05-17T16:49:17+08:00,2023-05-17T16:51:36+08:00,臺南生活美學館(府前路),National Tainan Living Art Center(Fuqian Rd.),府前路二段/府前一街口,"Sec. 2, Fuqain Rd. & Fuqian 1st St. Intersection(Southwest)",120.18871,22.99219,wsj6ycwep
+TNN501305018,501305018,TNN,20,2,2023-05-17T16:43:17+08:00,2023-05-17T16:51:36+08:00,西湖公園,Xihu Park,民權路四段/頂美二街口,"Sec. 4, Minquan Rd. & Dingmei 2nd St. Intersection",120.18458,22.99921,wsj6yfgsp
+TNN501305019,501305019,TNN,25,2,2023-05-17T16:48:16+08:00,2023-05-17T16:51:36+08:00,河樂廣場(康樂街),The Spring (Kangle St.),中正路347號旁,"No. 347, Zhongzheng Rd.",120.19438,22.99327,wsj6z1fcs
+TNN501306001,501306001,TNN,20,2,2023-05-17T16:41:18+08:00,2023-05-17T16:51:36+08:00,臺南都會公園(文華路),Metropolitan Park-Wenhua Rd.,臺南都會公園(文華路二段),"Metropolitan Park(Sec. 2, Wenhua Rd.)",120.22319,22.93732,wsj6rxxge
+TNN501306002,501306002,TNN,20,2,2023-05-17T15:15:17+08:00,2023-05-17T16:51:36+08:00,臺南都會公園(文賢路),Metropolitan Park-Wenxian Rd.,奇美博物館文賢路停車場,Chimei Museum Parking Lot(Wenxian Rd.),120.22868,22.93625,wsj6rz7v7
+TNN501306003,501306003,TNN,42,2,2023-05-17T16:45:06+08:00,2023-05-17T16:51:36+08:00,嘉南藥理大學,Chia Nan University,嘉南藥理大學(北三機車停車場),"The 3rd. North Parking Lot of Motocycle, CNU",120.22728,22.92231,wsj6rufu4
+TNN501306004,501306004,TNN,40,2,2023-05-17T16:42:05+08:00,2023-05-17T16:51:36+08:00,保安轉運站,Bao'an Transfer Station,保安轉運站公車侯車亭旁 (文賢路一段),The Bus Stop of Bao'an Transfer Station,120.2306,22.9328,wsj6ryv30
+TNN501306007,501306007,TNN,20,2,2023-05-17T16:50:26+08:00,2023-05-17T16:51:36+08:00,衛福部胸腔病院,"Chest Hospital, MOHW",文心路/中山路口(東南側),Wenxin Rd. & Zhongshan Rd. Intersection(Southeast),120.24154,22.97435,wsjd8nm5q
+TNN501309001,501309001,TNN,20,2,2023-05-17T16:48:16+08:00,2023-05-17T16:51:36+08:00,大興公園,Daxing Park,文賢路/大興街口(西南側),Wenxian Rd. & Daxing St. Intersection(Southwest),120.19377,23.01182,wsj6zj4mt
+TNN501309002,501309002,TNN,37,2,2023-05-17T16:47:16+08:00,2023-05-17T16:51:36+08:00,花園夜市,Garden Night Market,海安路三段/和緯路三段口(西南側),"Sec. 3, Hai'an Rd. & Sec. 3, Hewei Rd.(Southwest)",120.2004,23.01131,wsj6zjp68
+TNN501309003,501309003,TNN,20,2,2023-05-17T16:50:26+08:00,2023-05-17T16:51:36+08:00,和順公園,Heshun Park,臨安路二段231號對側,"No. 231. Sec. 2, Lin'an Rd.(Opposite)",120.20059324732941,23.00399733616001,wsj6z5xru
+TNN501309004,501309004,TNN,40,2,2023-05-17T16:50:26+08:00,2023-05-17T16:51:36+08:00,臺南公園(臺南轉運站),Tainan Park(Tainan Transfer Sta.),公園路/公園南路口(東北側),Gongyuan & Gongyuan S. Rd.(Northeast),120.20932,23.00176,wsj6z7mfb
+TNN501309005,501309005,TNN,36,2,2023-05-17T16:51:05+08:00,2023-05-17T16:51:36+08:00,臺南二中,Tainan Second Senior High School,公園北路3號(東北側),"No. 3, Gongyuan N. Rd.(Northeast)",120.21322,23.00397,wsj6ze8xg
+TNN501309006,501309006,TNN,30,2,2023-05-17T16:50:26+08:00,2023-05-17T16:51:36+08:00,成大醫院(小東路),Cheng Kung University Hospital ( Xiaodong Rd. )),小東路35號前,"No. 35, Xiaodong Rd.",120.21824,23.00108,wsj6zehr0
+TNN501309007,501309007,TNN,15,2,2023-05-17T16:30:59+08:00,2023-05-17T16:51:36+08:00,海安成功,Hai'an Chenggong Rd. Intersection,海安路三段17號前,"No. 17, Sec. 3, Hai'an Rd.",120.19879,23.00088,wsj6z5njf
+TNN501309008,501309008,TNN,15,2,2023-05-17T07:57:16+08:00,2023-05-17T16:51:36+08:00,福德公園,Fude Park,文成路/育德三街口,Wencheng Rd. & Yude 3rd Rd. Intersection,120.20197,23.01282,wsj6zm27k
+TNN501309009,501309009,TNN,21,2,2023-05-17T16:32:16+08:00,2023-05-17T16:51:36+08:00,延平國中,Yanping Junior High School,和緯路一段/長榮路五段401巷口,"Sec. 1, Hewei Rd. & Ln. 401, Sec. 5, Changrong Rd. Intersection",120.21164,23.01028,wsj6zkzkw
+TNN501309010,501309010,TNN,20,2,2023-05-17T16:30:59+08:00,2023-05-17T16:51:36+08:00,光武公園,Guangwu Park,北門路二段591號,"No. 591, Sec. 2, Beimen Rd.",120.21663,23.01205,wsj6zt5nf
+TNN501309011,501309011,TNN,19,2,2023-05-17T16:45:19+08:00,2023-05-17T16:51:36+08:00,成大醫院(東豐路),Medicine and Nursing Department,東豐路166號前,"No. 166, Dongfeng Rd.",120.21734,23.00328,wsj6zeeeg
+TNN501309013,501309013,TNN,20,2,2023-05-17T16:46:19+08:00,2023-05-17T16:51:36+08:00,開元振興公園,Kaiyuan Zhenxing Park,開南街60號,"No. 60, Kainan Rd.",120.2242,23.00665,wsj6zu0x6
+TNN501309018,501309018,TNN,20,2,2023-05-17T16:51:17+08:00,2023-05-17T16:51:36+08:00,立德公園,Lide Park,立賢路一段/育德路口,"Sec. 1, Lixian Rd. & Yude Rd. Intersection",120.20561,23.00958,wsj6zkg09
+TNN501309020,501309020,TNN,20,2,2023-05-17T14:23:16+08:00,2023-05-17T16:51:36+08:00,孝德公園,Xiaode Park,育德二路421巷26號,"No. 26, Ln. 421, Yude 2nd Rd.",120.20152,23.01631,wsj6zmbpd
+TNN501309021,501309021,TNN,20,2,2023-05-17T16:27:16+08:00,2023-05-17T16:51:36+08:00,勝安香草運動公園,Sheng'an Vanilla Sport Park,開元路/前鋒路口,Kaiyuan Rd. & Qianfeng Rd. Intersection,120.21618,23.00594,wsj6zs4g2
+TNN501309023,501309023,TNN,20,2,2023-05-17T14:25:18+08:00,2023-05-17T16:51:36+08:00,育北公園,Yubei Park,育德二路786號(對側人行道),"No. 786, Yude 2nd Rd.(Opposite)",120.20136,23.01973,wsj6znxgw
+TNN501309025,501309025,TNN,20,2,2023-05-17T16:43:17+08:00,2023-05-17T16:51:36+08:00,小東公園,Xiaodong Park,小東路57號東側,"Xiaodong Rd. & Sec. 3, Linsen Rd.(Northeast)",120.22511,23.00064,wsj6zg1k2
+TNN501309027,501309027,TNN,19,2,2023-05-17T14:32:16+08:00,2023-05-17T16:51:36+08:00,北安公園,Bei'an Park,北安路一段142號,"No. 142, Sec. 1, Bei'an Rd.",120.20931,23.01736,wsj6zqjtz
+TNN501309028,501309028,TNN,20,2,2023-05-17T15:52:16+08:00,2023-05-17T16:51:36+08:00,成德公園,Chengde Park,育德路500號,"No. 500, Yude Rd.",120.20666,23.01415,wsj6zmeg4
+TNN501311001,501311001,TNN,30,2,2023-05-17T16:45:19+08:00,2023-05-17T16:51:36+08:00,永康車站,Yongkang Sta.,中山路536巷內,"Ln. 536, Zhongshan Rd.",120.2541311,23.03861526,wsje06n3s
+TNN501311002,501311002,TNN,25,2,2023-05-17T16:32:16+08:00,2023-05-17T16:51:36+08:00,臺南市立圖書館,Tainan Public Library,康橋大道255號,"No. 255, Kangciao Blvd.",120.23797,23.02506,wsjdbpdde
+TNN501311004,501311004,TNN,25,2,2023-05-17T16:40:25+08:00,2023-05-17T16:51:36+08:00,南大附中,The Affiliated Senior High School of National University of Tainan,中山南路948號,"No. 948, Zhongshan S. Rd.",120.2528907,23.0237809,wsjdbrm7p
+TNN501311005,501311005,TNN,20,2,2023-05-17T16:18:18+08:00,2023-05-17T16:51:36+08:00,小橋公園,Xiaoqiao Park,東橋十街3號南側,"No. 3, Dongqiao 10th St.(South)",120.2336,23.02246,wsj6zzp7t
+TNN501311008,501311008,TNN,20,2,2023-05-17T15:59:17+08:00,2023-05-17T16:51:36+08:00,龍中公園,Longzhong Park,永大路三段618巷/八德街88巷口,"Ln. 618, Sec. 3, Yongda De. & Ln. 88, Bade St. Intersection",120.2606,23.0385,wsje0d50g
+TNN501311016,501311016,TNN,27,2,2023-05-17T16:40:25+08:00,2023-05-17T16:51:36+08:00,奇美醫院(中華路),Chi Mei Medical Center(Zhonghua Rd.),中華路901號,"No. 901, Zhonghua Rd.",120.2223,23.02082,wsj6zwz1y
+TNN501311020,501311020,TNN,20,2,2023-05-17T16:40:25+08:00,2023-05-17T16:51:36+08:00,大橋三街(活動中心),Daqiao 3rd St.(Activity Center),大橋三街230號南側,"No. 230, Daqiao 3rd St.(South)",120.22876,23.02054,wsj6zygbm
+TNN501314001,501314001,TNN,24,2,2023-05-17T16:40:25+08:00,2023-05-17T16:51:36+08:00,水景公園,Shuijing Park,安北路與安平路850巷路口,"Anbei Rd. & Ln. 850, Anping Rd. Intersection",120.1581,23.00202,wsj6y72kq
+TNN501314002,501314002,TNN,25,2,2023-05-17T14:23:16+08:00,2023-05-17T16:51:36+08:00,安平遊憩碼頭,Anping Recreational Wharf,運河路55號對側,"No. 55, Yunhe Rd.(Opposite)",120.16055,22.99757,wsj6y6d4x
+TNN501314003,501314003,TNN,25,2,2023-05-17T16:12:16+08:00,2023-05-17T16:51:36+08:00,安億停車場,Anyi Parking Lot,安億路(安億停車場旁),Anyi Rd.(Anyi Parking Lot),120.16381,22.99667,wsj6y6kt7
+TNN501314004,501314004,TNN,20,2,2023-05-17T16:44:17+08:00,2023-05-17T16:51:36+08:00,安平區公所,Anping District Office,育平路與育平八街(東南側人行道),Yuping Rd. & Yuping 8th St.(Southeast),120.16768,22.99437,wsj6y3zrv
+TNN501314005,501314005,TNN,25,2,2023-05-17T16:44:17+08:00,2023-05-17T16:51:36+08:00,運河公園,Canal Park,建平十七街及華平路口,Jianping 17th St. & Huaping Rd. Intersection,120.17677,22.99737,wsj6ydw13
+TNN501314006,501314006,TNN,20,2,2023-05-17T16:49:17+08:00,2023-05-17T16:51:36+08:00,臺南市政府(永華中心),Tainan City Government (Yonghua Center),府前路二段與府前四街(西南側人行道),"Sec. 2, Fuqian Rd. & Fuqain 4th St.(Southwest)",120.18457,22.99301,wsj6ycexz
+TNN501314007,501314007,TNN,26,2,2023-05-17T16:07:16+08:00,2023-05-17T16:51:36+08:00,臺南市議會,Tainan City Council,永華路二段/中華西路二段口(東北側),"Sec. 2, Yonghua Rd. & Sec. 2, Zhonghua W. Rd. Intersection(Northeast)",120.18674,22.98923,wsj6ycj3f
+TNN501314008,501314008,TNN,20,2,2023-05-17T16:04:16+08:00,2023-05-17T16:51:36+08:00,林默娘公園,Lin Mo-Niang Park,安億路(林默娘公園停車場旁),Anyi Rd. (Lin Mo-Niang Park Parking Lot),120.15681,22.99291,wsj6y1xx2
+TNN501314009,501314009,TNN,20,2,2023-05-17T16:50:26+08:00,2023-05-17T16:51:36+08:00,億載金城,Eternal Golden Castle,光州路與光州五街路口(億載金城侯車亭旁),Guangzhou Rd. & Guangzhou 5th St. Intersecrtion,120.16009,22.98877,wsj6y2czm
+TNN501314010,501314010,TNN,40,2,2023-05-17T16:44:17+08:00,2023-05-17T16:51:36+08:00,漁光島,Yuguang Island,健康路三段/漁光路(西南側),"Sec. 3, Jiankang Rd. & Yuguang Rd. Intersection",120.15642,22.98143,wsj6wpxhx
+TNN501314011,501314011,TNN,18,2,2023-05-17T16:51:17+08:00,2023-05-17T16:51:36+08:00,西門實小,Ximen Experiment Elementary School,古堡街87號旁,"No. 87, Gubao St.",120.16089,23.00301,wsj6y7d6p
+TNN501314012,501314012,TNN,20,2,2023-05-17T16:45:19+08:00,2023-05-17T16:51:36+08:00,臺南地政事務所,Tainan Land Office,建平路321號對側公園,"No. 321, Jianping Rd.(Opposite)",120.18283,22.99055,wsj6yc63w
+TNN501314013,501314013,TNN,15,2,2023-05-17T15:23:17+08:00,2023-05-17T16:51:36+08:00,漁光島停車場,Yuguang Island Parking Lot,漁光路停車場(對側人行道),Yuguang Island Parking Lot(Opposite),120.15221,22.98634,wsj6y0s1j
+TNN501314014,501314014,TNN,15,2,2023-05-17T16:51:17+08:00,2023-05-17T16:51:36+08:00,億載公園,Eternal Golden Castle Park,光州永華路二段停車場,"Guangzhou Rd. & Sec. 2, Yonghua Rd. Intersection",120.15929,22.99138,wsj6y33q6
+TNN501314018,501314018,TNN,19,2,2023-05-17T11:35:18+08:00,2023-05-17T16:51:36+08:00,安平中華西,Anping Zhonghua W. Rd. Intersection,安平路70號(對側人行道),"No. 70, An'ping Rd.(Opposite)",120.18482,22.99801,wsj6yfevj
+TNN501314019,501314019,TNN,21,2,2023-05-17T16:33:18+08:00,2023-05-17T16:51:36+08:00,永華文平,Yonghua Wenping Rd. Intersection,永華路二段399號前,"No. 399, Sec. 2, Yonghua Rd.",120.17875,22.98996,wsj6y9pqp
+TNN501314020,501314020,TNN,20,2,2023-05-17T16:45:19+08:00,2023-05-17T16:51:36+08:00,金城國中,Tainan Municipal Jincheng Junior High School,怡平路140巷口,"Ln. 140, Yiping Rd.",120.17961,22.99328,wsj6ycb1e
+TNN501314021,501314021,TNN,20,2,2023-05-17T16:43:17+08:00,2023-05-17T16:51:36+08:00,怡平公園,Yiping Park,平通路/永華六街口(西南側),Pingtong Rd. & Yonghua 6th St. Intersection(Southwest),120.1767,22.99286,wsj6y9wp0
+TNN501314022,501314022,TNN,20,2,2023-05-17T16:47:16+08:00,2023-05-17T16:51:36+08:00,永華國平,Yonghua Guoping Rd. Intersection,永華路二段/國平路口(西南側),"Sec. 2, Yonghua Rd. & Guoping Rd. Intersection",120.17097,22.99101,wsj6y93u6
+TNN501314023,501314023,TNN,27,2,2023-05-17T16:06:18+08:00,2023-05-17T16:51:36+08:00,健康國平西,Jiankang Guoping W. Rd. Intersection,健康路三段326號對側,"No. 326, Sec. 3, Jiankang Rd.(Opposite)",120.16984,22.9843,wsj6y81j2
+TNN501314024,501314024,TNN,21,2,2023-05-17T16:48:16+08:00,2023-05-17T16:51:36+08:00,台南大員皇冠假日酒店,"Crowne Plaza Tainan, AN IHG Hotel",安北路/州平二街口(西北側),Anbei Rd. & Zhouping 2nd St. Intersection(Northwest),120.15029,22.99879,wsj6y4fc8
+TNN501316001,501316001,TNN,20,2,2023-05-17T15:53:16+08:00,2023-05-17T16:51:36+08:00,臺灣歷史博物館,National Museum Of Taiwan History,長和路一段250號,"Sec. 1, Changhe Rd. & Guanqian 1st Rd. Intersection",120.23282,23.05829,wsj7pvwu7
+TNN501316002,501316002,TNN,25,2,2023-05-17T15:27:15+08:00,2023-05-17T16:51:36+08:00,台江文化中心,Taikang Cultural Center,安中路二段136號(對側人行道),"No. 136, Sec. 2, Anzhong Rd.(Opposite)",120.18795,23.04617,wsj7ngqjw
+TNN501316003,501316003,TNN,20,2,2023-05-17T16:14:17+08:00,2023-05-17T16:51:36+08:00,台江國家公園遊客中心,Taijiang National Park Headquarters,四草大道118號東側,"No. 118, Shichao Blvd.(East)",120.13935,23.00254,wsj6vg6z9
+TNN501316004,501316004,TNN,20,2,2023-05-17T11:16:17+08:00,2023-05-17T16:51:36+08:00,四草綠色隧道,Sicao Mangrove Green Tunnel,大眾路360號南側,"No. 360, Dazhong Rd.(South)",120.13589,23.01927,wsj6vy82c
+TNN501316006,501316006,TNN,20,2,2023-05-17T13:11:05+08:00,2023-05-17T16:51:36+08:00,媽祖宮公園,Luermen Matsu Temple Park,媽祖宮一街136號東南側,"No. 136, Mazugong 1st St.(Southeast)",120.12509,23.0366,wsj7j98mv
+TNN501319001,501319001,TNN,20,2,2023-05-16T16:36:18+08:00,2023-05-17T16:51:36+08:00,葫蘆埤自然公園,Hulupi Natural Park,中山路二段207號,"No. 207, Sec.2, Zhongshan Rd.",120.29699,23.19837,wsjecrjs7
+TNN501321002,501321002,TNN,21,2,2023-05-17T16:45:19+08:00,2023-05-17T16:51:36+08:00,平實公園,Pingshi Park,小東路513號南側,"No. 513, Xiaodong Rd.(South)",120.23606,22.99833,wsjdb49nz
+TNN501321003,501321003,TNN,62,2,2023-05-17T16:49:17+08:00,2023-05-17T16:51:36+08:00,成大公園,Chengda Park,育樂街88號旁,"No. 88, Yule St.",120.21491,22.99653,wsj6zd3u6
+TNN501321004,501321004,TNN,30,2,2023-05-17T16:50:26+08:00,2023-05-17T16:51:36+08:00,成大會館,Zenda Suites,勝利路/大學路口(東南側),Shenli Rd./Daxue Rd.,120.21822,22.99614,wsj6zdk4p
+TNN501321005,501321005,TNN,30,2,2023-05-17T16:49:17+08:00,2023-05-17T16:51:36+08:00,馬雅各青年公園,James Laidlaw Maxwell Qingnian Park,青年路360號(對側人行道),"No. 360, Qingnian Rd.(Opposite)",120.21502,22.99139,wsj6z93ys
+TNN501321006,501321006,TNN,20,2,2023-05-17T16:51:05+08:00,2023-05-17T16:51:36+08:00,東寧運動公園,Dongning  Park,東寧路220號北側,"No. 220, Dongning Rd.(North)",120.22462,22.99114,wsj6zc2vh
+TNN501321007,501321007,TNN,20,2,2023-05-17T16:38:17+08:00,2023-05-17T16:51:36+08:00,衛生局(林森辦公室),Public Health Bureau (Linsen Office),林森路一段418號旁,"No. 418, Sec. 1, linsen Rd.",120.22246,22.98537,wsj6z8r76
+TNN501321008,501321008,TNN,20,2,2023-05-17T16:51:17+08:00,2023-05-17T16:51:36+08:00,時代公園,Dongning Yunong Rd. Intersection,東寧路520號北側,"No. 520, Dongning Rd.(North)",120.23116,22.98929,wsj6zcjdm
+TNN501321009,501321009,TNN,22,2,2023-05-17T16:50:26+08:00,2023-05-17T16:51:36+08:00,虎尾寮市場,Hu-Wei-Liao Market,裕平路/裕和二街(西北側),Yuping Rd. & Yuhe 2nd St.(Northwest),120.2409,22.98509,wsjdb0kcb
+TNN501321010,501321010,TNN,24,2,2023-05-17T15:59:17+08:00,2023-05-17T16:51:36+08:00,裕文圖書館,Yuwen Branch Library,裕文路301號(對側人行道),"No. 301, Yuwen Rd.(Opposite)",120.24588,22.98218,wsjd8rb2u
+TNN501321011,501321011,TNN,20,2,2023-05-17T16:50:26+08:00,2023-05-17T16:51:36+08:00,德光公園,Deguang Park,崇德路111號,"No. 111, Chongde Rd.",120.21934,22.97976,wsj6xxm4c
+TNN501321012,501321012,TNN,15,2,2023-05-17T16:28:16+08:00,2023-05-17T16:51:36+08:00,和平公園,Heping Park,文化路100號前,"No. 100, Wenhua Rd.",120.23231,22.97705,wsj6xyy7p
+TNN501321014,501321014,TNN,25,2,2023-05-17T16:49:17+08:00,2023-05-17T16:51:36+08:00,崇明路停E6,Chongming Rd. E6 Parking Lot,崇明路/崇明二十街(西南側),Chongmin Rd. & Chongmin 20th St.(Southwest),120.22558,22.96897,wsj6xv3eg
+TNN501321015,501321015,TNN,18,2,2023-04-10T10:47:04+08:00,2023-05-17T16:51:36+08:00,臺南監理站,"Tainan Station, Chiayi Motor Vehicles Office",崇德路1號前,"No. 1, Chongde Rd.",120.21782,22.98139,wsj6xxeuq
+TNN501321016,501321016,TNN,20,2,2023-05-17T16:50:26+08:00,2023-05-17T16:51:36+08:00,車鑑會,Tainan City Traffic Accident Investigation Committee,府連東路/林森路一段口(西北側),"Fulian E. Rd. & Sec. 1, Linsen Rd.(Northwest)",120.21946,22.98372,wsj6z8j1u
+TNN501321017,501321017,TNN,19,2,2023-05-17T16:50:26+08:00,2023-05-17T16:51:36+08:00,大學路停車場,Daxue Rd. Parking Lot,大學路西段/育樂街66巷口,"Daxue Rd. W. & Ln. 66, Yule St. Intersection",120.2158,22.99657,wsj6zd6kx
+TNN501321018,501321018,TNN,24,2,2023-05-17T16:51:17+08:00,2023-05-17T16:51:36+08:00,臺南一中,Tannan First Senior High School,勝利路/東寧路口(東北側),Shengli Rd. & Dongning Rd. Intersection(Northeast),120.21789,22.99271,wsj6z9eyp
+TNN501321019,501321019,TNN,14,2,2023-05-17T16:40:25+08:00,2023-05-17T16:51:36+08:00,忠孝國中(崇仁龍山),Jhongsiao Junior High School(Chongren Longshan St. Intersection),崇仁街72號前,"No. 72, Chongren St.",120.22339,22.98396,wsj6zb052
+TNN501321020,501321020,TNN,15,2,2023-05-17T16:46:19+08:00,2023-05-17T16:51:36+08:00,文化公園,Wenhua Park,文化二街/文化一街(東北側),Wenhua 2nd St. & Wenhua 1st St. Intersection(Northeast),120.23104,22.977899999999998,wsj6xyvxf
+TNN501321023,501321023,TNN,20,2,2023-05-17T16:51:17+08:00,2023-05-17T16:51:36+08:00,東興公園(東安路251巷),"Dongsing Park(Ln. 251, Dong'an Rd.)",東安路251巷60號(對側人行道),"No. 60, Ln. 251, Dong'an Rd.(Opposite)",120.22565,22.99684,wsj6zf3wk
+TNN501321024,501321024,TNN,20,2,2023-05-17T16:42:17+08:00,2023-05-17T16:51:36+08:00,東興公園(林森路),Dongsing Park(Linsen Rd.),林森路二段/東和路口(東南側),"Sec. 2, Linsen Rd. & Donghe Rd.(Southeast)",120.22444,22.99765,wsj6zf8g0
+TNN501321025,501321025,TNN,80,2,2023-05-17T16:51:17+08:00,2023-05-17T16:51:36+08:00,臺南車站(前站一),Tainan Sta.(Front#1),北門路二段12號旁,"No. 17, Sec. 2, Beimen Rd.",120.21238,22.99797,wsj6z6xuz
+TNN501321031,501321031,TNN,22,2,2023-05-17T16:50:26+08:00,2023-05-17T16:51:36+08:00,榮譽街停車場(崇明路308巷口),"Rongyu St. Parking Lot(Ln. 308, Chongming Rd. Intersection)",崇明路304號西南側,"No. 304, Chongming Rd.(Southwest)",120.21982,22.97737,wsj6xwvku
+TNN501323001,501323001,TNN,20,2,2023-05-17T16:39:17+08:00,2023-05-17T16:51:36+08:00,水萍塭公園(夏林路),Shueipingwen Park(Xialin Rd.),夏林路1-7號(對側人行道),"No. 1-7, Xialin Rd. (Opposite)",120.19475,22.98615,wsj6z0e0h
+TNN501323002,501323002,TNN,30,2,2023-05-17T16:44:17+08:00,2023-05-17T16:51:36+08:00,臺南高商,National Tainan Commercial Vocational Senior High School,南門路/健康路一段口(西南側),"Nanmen Rd. & Sec. 1, Jiankang Rd.(Southwest)",120.20353,22.98066,wsj6xr981
+TNN501323003,501323003,TNN,21,2,2023-05-17T16:50:26+08:00,2023-05-17T16:51:36+08:00,忠烈祠,Tainan Martyrs' Shrine,健康路一段48號(對側人行道),"No. 48, Sec. 1, Jiankang Rd.(Opposite)",120.21054,22.98117,wsj6xrweh
+TNN501323004,501323004,TNN,20,2,2023-05-17T16:40:25+08:00,2023-05-17T16:51:36+08:00,日新國小,Rihsin Elementary School,金華路一段476號(對側人行道),"No. 476, Sec. 1, Jinhua Rd.(Opposite)",120.19054,22.97271,wsj6xn01d
+TNN501323005,501323005,TNN,20,2,2023-05-17T16:51:17+08:00,2023-05-17T16:51:36+08:00,鹽埕圖書館,Yancheng Library,新和東路51號(對側人行道),"No. 51, Xinhe E. Rd.(Opposite)",120.18786,22.96742,wsj6wvn4u
+TNN501323006,501323006,TNN,20,2,2023-05-17T15:19:16+08:00,2023-05-17T16:51:36+08:00,南區區公所(公兒26公園),South District Office(No.26 Park),中華南路二段251號旁,"No. 251, Sec. 2, Zhonghua S. Rd.",120.18743,22.96154,wsj6wujbd
+TNN501323007,501323007,TNN,21,2,2023-05-17T16:36:18+08:00,2023-05-17T16:51:36+08:00,新興國小,Xingxing Elementary School,夏林路248號(對側人行道),"No. 248, Xialin Rd.(Opposite)",120.1953,22.9786,wsj6xp5s1
+TNN501323008,501323008,TNN,20,2,2023-05-17T12:12:15+08:00,2023-05-17T16:51:36+08:00,黃金海岸,Gold Coast Visitor Center,黃金海岸遊客中心(南側廣場),South Plaza,120.17631,22.93058,wsj6qwmsq
+TNN501323009,501323009,TNN,20,2,2023-05-17T16:34:18+08:00,2023-05-17T16:51:36+08:00,萬年公園,Wannian Park,灣裡路與灣裡路61巷(萬年公園侯車亭旁),"Wanli Rd. & Ln. 61, Wanli Rd. Intersection",120.18056,22.93306,wsj6qybff
+TNN501323010,501323010,TNN,17,2,2023-05-17T16:33:18+08:00,2023-05-17T16:51:36+08:00,水萍塭公園(金華路),Shueipingwen Park(Jinhua Rd.),金華路二段381號東側,"No. 381, Sec. 2, Jinhua Rd.(Opposite)",120.19201,22.98633,wsj6z091h
+TNN501323012,501323012,TNN,20,2,2023-05-17T16:48:16+08:00,2023-05-17T16:51:36+08:00,瀨口公園,Laikou Park,中華西路一段438號(對側人行道),"No. 438, Sec. 1, Zhonghua W. Rd.",120.18636,22.9854,wsj6ybm59
+TNN501323013,501323013,TNN,20,2,2023-05-17T16:42:17+08:00,2023-05-17T16:51:36+08:00,健康綠洲公園,Oasis Park,仁南街/仁南一街口,Rennan St. & Rennan 1st St. Intersection,120.18433,22.98286,wsj6wzgsc
+TNN501323014,501323014,TNN,20,2,2023-05-17T16:30:59+08:00,2023-05-17T16:51:36+08:00,興昌水交社,Xingchang Shuijiaoshe Rd. Intersection,興昌路/水交社路口(北側),Xingchang Rd. & Shuijiaoshe Rd. Intersection(North),120.20046,22.97682,wsj6xnz39
+TNN501323015,501323015,TNN,16,2,2023-05-17T11:15:16+08:00,2023-05-17T16:51:36+08:00,水交社文創園區,Shuijiaoshe Cultural Park,水交社一街/興中街63巷口(西南側),"Shuijiaoshe 1st St. & Ln. 63, Xingzhong St. Intersection(Southwest)",120.20157,22.978180000000002,wsj6xr01e
+TNN501323016,501323016,TNN,13,2,2023-05-17T16:30:42+08:00,2023-05-17T16:51:36+08:00,西門健康停車場,Ximen Jiankang Parking Lot,西門路一段469號,"No. 469, Sec. 1, Ximen Rd.",120.19737,22.98155,wsj6xptj1
+TNN501323017,501323017,TNN,15,2,2023-05-17T16:40:25+08:00,2023-05-17T16:51:36+08:00,文華公園,Wenhua Park,永華路一段275號,"No. 275, Sec. 1, Yonghua Rd.",120.18956,22.98852,wsj6ybzmg
+TNN501323018,501323018,TNN,18,2,2023-05-17T16:43:17+08:00,2023-05-17T16:51:36+08:00,亞洲餐旅,Asia Senior Hospitality Vocational School,大成路一段5號,"No. 5, Sec. 1, Dacheng Rd.",120.20288,22.97497,wsj6xq3nf
+TNN501323019,501323019,TNN,21,2,2023-05-17T16:13:05+08:00,2023-05-17T16:51:36+08:00,南寧高中,Nan-ning Junior High School,萬年路165號前,"No. 165, Wannian Rd.",120.18588,22.93491,wsj6qzhtt
+TNN501327002,501327002,TNN,18,2,2023-05-17T12:08:15+08:00,2023-05-17T16:51:36+08:00,麻豆區衛生所,Madou District Public Health Center,興國路11-1號南側,"No. 11-1, Xingguo Rd.(South)",120.2482,23.18229,wsjebk4nd
+TNN501328001,501328001,TNN,20,2,2023-05-17T13:21:19+08:00,2023-05-17T16:51:36+08:00,南科台積電(十四A),TSMC (Fab-14A),南科北路/南科八路口(西北側),Nanke N. Rd. & Nanke 8th Rd.(Northwest),120.27483,23.1145,wsje2zv7w
+TNN501328002,501328002,TNN,20,2,2023-05-17T16:01:18+08:00,2023-05-17T16:51:36+08:00,霞客湖,Xiake Lake,南科七路/三抱竹路口(東南側),Nanke 7th Rd. & Sanbaozhu Rd. Intersection(Southeast),120.26996,23.10799,wsje2y9vv
+TNN501328003,501328003,TNN,20,2,2023-05-17T14:56:16+08:00,2023-05-17T16:51:36+08:00,南科健康生活館,STSP Wellness Center,環東路二段20號前,"No. 20, Huandong Rd.",120.28186,23.11406,wsje3pf94
+TNN501328004,501328004,TNN,20,2,2023-05-17T16:45:19+08:00,2023-05-17T16:51:36+08:00,善化車站,Shanhua Sta.,中山路20號前,"No. 20, Zhongshan Rd.",120.30599,23.13364,wsje9ek5h
+TNN501328005,501328005,TNN,20,2,2023-05-17T16:51:17+08:00,2023-05-17T16:51:36+08:00,善化高中,Shan-Hua Senior High School,大成路160號對側,"No. 160, Dacheng Rd.(Opposite)",120.30167,23.13015,wsje9d9nb
+TNN501328006,501328006,TNN,20,2,2023-05-17T15:42:16+08:00,2023-05-17T16:51:36+08:00,南科車站,Nanke Sta.,臺鐵南科站(西出口西拉雅大橋下),Nanke Sta.(West),120.30206,23.10788,wsje3w9m1
+TNN501329001,501329001,TNN,20,2,2023-05-17T16:18:19+08:00,2023-05-17T16:51:36+08:00,新化武德殿,Xinhua Wude Temple,和平街53號前,"No. 53, Heping St.",120.30926,23.03355,wsje19ns0
+TNN501329003,501329003,TNN,15,2,2023-05-15T20:18:17+08:00,2023-05-17T16:51:36+08:00,新化體育公園,Xinhua Sport Park,公園路110號,"No. 110, Gongyuan Rd.",120.30652,23.02954,wsje18ksc
+TNN501329004,501329004,TNN,20,2,2023-05-17T15:26:17+08:00,2023-05-17T16:51:36+08:00,新化國中,Xinhua Junior High School,民生路43號東側,"No. 43, Minsheng Rd.(East)",120.31153,23.03562,wsje1c80j
+TNN501329006,501329006,TNN,20,2,2023-05-17T15:54:18+08:00,2023-05-17T16:51:36+08:00,大智路豐榮洋子(活動中心),Dazhi Rd. Fengrong Yangzi (Activity Center),新化區豐榮里洋子164號,"No. 164, Yangzi, Fengrong Village, Xinhua Dist.",120.29797,23.03371,wsje13nm1
+TNN501330001,501330001,TNN,20,2,2023-05-17T16:41:18+08:00,2023-05-17T16:51:36+08:00,南科管理局,STSP Bureau,南科三路17號前,"No. 17, Nanke 3rd Rd.",120.28203,23.09865,wsje3hfxq
+TNN501330002,501330002,TNN,20,2,2023-05-17T16:50:26+08:00,2023-05-17T16:51:36+08:00,新市車站,Xinshi Sta.,中華路1號(東北側),"No. 1, Zhonghua Rd.(Northeast)",120.2902169,23.06834369,wsje1r2wv
+TNN501330003,501330003,TNN,18,2,2023-05-17T16:50:26+08:00,2023-05-17T16:51:36+08:00,臺灣史前博物館(南科考古館),"Museum of Archaeology, Tainan Branch of National Museum of Prehistory",南科三路10號(北側停車場前),"No. 10, Nanke 3rd Rd.(North)",120.28391,23.10189,wsje3js46
+TNN501330004,501330004,TNN,22,2,2023-05-17T16:36:05+08:00,2023-05-17T16:51:36+08:00,南科社區中心,STSP Community Center,大順三路125號前,"No. 125, Dashun 3rd Rd.",120.28843,23.10225,wsje3jxk7
+TNN501330005,501330005,TNN,17,2,2023-05-17T16:25:18+08:00,2023-05-17T16:51:36+08:00,新市區公所,Sinshih District Office,中興街12號,"No. 12, Zhongxing St.",120.29502,23.07883,wsje33k5v
+TNN501331001,501331001,TNN,22,2,2023-05-17T16:41:18+08:00,2023-05-17T16:51:36+08:00,新營美術園區,Xinying Art Park,公園路一段/中華路口,"Sec. 1, Gongyuan Rd. & Zhonghua Rd. Intersection",120.30632,23.30503,wsjs9ds3s
+TNN501331002,501331002,TNN,28,2,2023-05-17T16:47:16+08:00,2023-05-17T16:51:36+08:00,新營高中,Sinying Senior High School,民權路101號(南側),"No. 101, Minquan Rd.(South)",120.31223,23.3079,wsjs9g0dq
+TNN501331004,501331004,TNN,34,2,2023-05-17T16:48:16+08:00,2023-05-17T16:51:36+08:00,新營車站,Xinying Sta.,中山路1號(東南側),"No. 1, Zhongshan Rd.(Southeast)",120.32277,23.30647,wsjsd4b65
+TNN501331005,501331005,TNN,15,2,2023-05-17T10:28:15+08:00,2023-05-17T16:51:36+08:00,天鵝湖公園,Swan Lake Park,中正路556-1號(停車場入口旁),"No. 556-1, Zhongzheng Rd.",120.31718,23.33157,wsjs9zkk1
+TNN501331006,501331006,TNN,30,2,2023-05-17T16:51:17+08:00,2023-05-17T16:51:36+08:00,臺南市政府(民治中心),Tainan City Government (Minchi Center),民治路36號前,"No. 36, Minzhi Rd.",120.3146244,23.3110517,wsjs9gdkt
+TNN501331007,501331007,TNN,20,2,2023-05-17T15:13:16+08:00,2023-05-17T16:51:36+08:00,新營轉運站,Xinying Transfer Sta.,新運二路/新運五路(東北側),Xinyun 2nd Rd. & Xinyun 5th Rd. Intersection(Northeast),120.28218,23.31069,wsjs95df9
+TNN501331008,501331008,TNN,20,2,2023-05-17T16:42:17+08:00,2023-05-17T16:51:36+08:00,南新國中,Nanxin Junior High School,民治路150號(對側人行道),"No. 150, Minzhi Rd.(Opposite)",120.30762,23.30933,wsjs9em6d
+TNN501331010,501331010,TNN,18,2,2023-05-17T16:50:26+08:00,2023-05-17T16:51:36+08:00,衛生局(東興辦公室),Public Health Bureau (Dongxing Office),東興路163號,"No. 163, Dongxing Rd.",120.32299,23.31511,wsjsdh2s2
+TNN501331012,501331012,TNN,20,2,2023-05-17T16:37:16+08:00,2023-05-17T16:51:36+08:00,新營體育場第二停車場,Tainan Municipal Xinying Stadium 2nd Parking Lot,長榮路二段/健康路口,"Sec. 2, Changrong Rd. & Jiankang Rd. Intersection",120.31187,23.31984,wsjs9v0rv
+TNN501335001,501335001,TNN,18,2,2023-05-17T15:01:17+08:00,2023-05-17T16:51:36+08:00,大臺南會展中心,ICC Tainan,歸仁十二路3號北側,Wudang Rd. & Guiren 12th Rd. Intersection(Northwest),120.28535,22.92226,wsjd3hv5g
+TNN501335002,501335002,TNN,20,2,2023-05-17T15:47:15+08:00,2023-05-17T16:51:36+08:00,陽明交通大學(臺南校區),NYCU Tainan Campus,高發三路(北向人行道),Gaofa 3rd Rd.,120.2945475,22.9247914,wsjd3m7fd
+TNN501335003,501335003,TNN,20,2,2023-05-17T16:22:16+08:00,2023-05-17T16:51:36+08:00,歸仁區公所(中正北路),Gueiren District Office(Zhongzheng N. Rd.),中正北路一段11號旁,"No. 11, Sec. 1, Zhongzheng N. Rd.",120.2946344,22.9672983,wsjd9m5fh

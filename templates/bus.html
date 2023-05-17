@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../static/src/icon.jpg" />
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+    <script src="../static/script.js"></script>
+    <title>公共運輸資訊整合系統-公車系統</title>
+  </head>
+  <script>
+    function show() {
+      document.getElementById("bus_table").style.display = "block";
+    }
+  </script>
+  <body>
+    <h2>公車系統</h2>
+    <nav>
+      <ul>
+        <li>
+          <a class="active" href="{{ url_for('index') }}"
+            ><img class="pic main" src="../static/src/main.png" /> 首頁</a
+          >
+        </li>
+        <li>
+          <a href="{{ url_for('bus') }}"
+            ><img class="pic bus" src="../static/src/公車.png" /> 公車時刻表</a
+          >
+        </li>
+        <li>
+          <a href="{{ url_for('train') }}"
+            ><img class="pic train" src="../static/src/火車.jfif" />
+            火車時刻表</a
+          >
+        </li>
+        <li>
+          <a href="{{ url_for('bike') }}"
+            ><img class="pic bike" src="../static/src/自行車.jpeg" />
+            自行車租借</a
+          >
+        </li>
+        <li>
+          <a href="{{ url_for('like') }}"
+            ><img class="pic contact" src="../static/src/like.jpg" />
+            我的最愛</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <section>
+      <select class="time">
+        <option>請選擇時間</option>
+        <option>1：00</option>
+        <option>2：00</option>
+        <option>3：00</option>
+        <option>4：00</option>
+        <option>5：00</option>
+        <option>6：00</option>
+        <option>7：00</option>
+        <option>8：00</option>
+        <option>9：00</option>
+        <option>10：00</option>
+        <option>11：00</option>
+        <option>12：00</option>
+        <option>13：00</option>
+        <option>14：00</option>
+        <option>15：00</option>
+        <option>16：00</option>
+        <option>17：00</option>
+        <option>18：00</option>
+        <option>19：00</option>
+        <option>20：00</option>
+        <option>21：00</option>
+        <option>22：00</option>
+        <option>23：00</option>
+        <option>24：00</option>
+      </select>
+      <select class="type">
+        <option>請選擇公車類別</option>
+        <option>藍線</option>
+        <option>棕線</option>
+        <option>紅線</option>
+        <option>黃線</option>
+        <option>綠線</option>
+        <option>橘線</option>
+      </select>
+      <select class="route">
+        <option>請選擇公車路線</option>
+        <option>藍1</option>
+        <option>藍2</option>
+        <option>藍3</option>
+        <option>藍4</option>
+        <option>藍10</option>
+        <option>藍13</option>
+        <option>藍14</option>
+        <option>藍15</option>
+        <option>藍22</option>
+        <option>藍23</option>
+        <option>藍24</option>
+      </select>
+      <button type="submit" class="btn" onclick="show()">確認</button>
+    </section>
+    <img
+      src="../static/src/bus_demo.png"
+      alt="bus_table"
+      id="bus_table"
+      style="width: 100%; display: none; position: absolute; top: 50%"
+    />
+  </body>
+</html>

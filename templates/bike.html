@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../static/src/icon.jpg" />
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+    <script src="../static/script.js"></script>
+    <title>公共運輸資訊整合系統-自行車系統</title>
+  </head>
+  <body>
+    <script>
+      window.onload = function () {
+        getBike();
+      };
+    </script>
+    <h2>自行車系統</h2>
+    <nav>
+      <ul>
+        <li>
+          <a class="active" href="{{ url_for('index') }}"
+            ><img class="pic main" src="../static/src/main.png" /> 首頁</a
+          >
+        </li>
+        <li>
+          <a href="{{ url_for('bus') }}"
+            ><img class="pic bus" src="../static/src/公車.png" /> 公車時刻表</a
+          >
+        </li>
+        <li>
+          <a href="{{ url_for('train') }}"
+            ><img class="pic train" src="../static/src/火車.jfif" />
+            火車時刻表</a
+          >
+        </li>
+        <li>
+          <a href="{{ url_for('bike') }}"
+            ><img class="pic bike" src="../static/src/自行車.jpeg" />
+            自行車租借</a
+          >
+        </li>
+        <li>
+          <a href="{{ url_for('like') }}"
+            ><img class="pic contact" src="../static/src/like.jpg" />
+            我的最愛</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <section>
+      <select id="bikeStationList"></select>
+      <br />
+      <button onclick="restBike()">查詢剩餘車位</button>
+      <p id="bikeStation-information"></p>
+    </section>
+  </body>
+</html>
