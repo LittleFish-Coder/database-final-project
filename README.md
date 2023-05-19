@@ -50,6 +50,9 @@ exit
 
 ### Gcloud Service
 
+- deploy service
+  
+
 - connect to mysql
   gcloud sql connect myinstance -u root
 
