@@ -1,5 +1,8 @@
+var mapsAPIKey = "AIzaSyC2Z_1g1BlZ_mHK2d9sB2eRNoZb8OxqZ1k";
 var testData;
-var stationList = [];
+var bikeStationList = [];
+var busStationList = [];
+var route_url = null;
 
 function boom() {
   console.log("boom!");
@@ -77,8 +80,8 @@ function getBike() {
     .then((data) => {
       console.log(data);
 
-      //save stations info to browser's stationList
-      stationList = data.slice();
+      //save stations info to browser's bikeStationList
+      bikeStationList = data.slice();
 
       // Get the selection list element
       var selectList = document.getElementById("bikeStationList");
@@ -86,8 +89,8 @@ function getBike() {
       // Loop through the array and create an option element for each object
       for (var i = 0; i < data.length; i++) {
         var option = document.createElement("option");
-        option.value = data[i]["StationID"];
-        option.text = data[i]["StationName_Zh_tw"];
+        option.value = data[i].station_id;
+        option.text = data[i].station_name;
         selectList.add(option);
       }
     })
@@ -96,17 +99,17 @@ function getBike() {
 
 function restBike() {
   const selectList = document.getElementById("bikeStationList");
-  const selectedValue = selectList.options[selectList.selectedIndex].value;
+  const selectedIndex = selectList.selectedIndex;
+  const selectedValue = selectList.options[selectedIndex].value;
   fetch("/api/rest_bike/" + selectedValue)
     .then((response) => response.json())
     .then((data) => {
       console.log(data); // return data from backend
-      // console.log(Object.keys(data));
-      stationName = stationList[selectList.selectedIndex]["StationName_Zh_tw"];
-      stationAddress =
-        stationList[selectList.selectedIndex]["StationAddress_Zh_tw"];
-      posLon = stationList[selectList.selectedIndex]["PositionLon"];
-      posLat = stationList[selectList.selectedIndex]["PositionLat"];
+      console.log(Object.keys(data));
+      stationName = bikeStationList[selectedIndex].station_name;
+      stationAddress = bikeStationList[selectedIndex].station_address;
+      posLon = bikeStationList[selectedIndex].position_lon;
+      posLat = bikeStationList[selectedIndex].position_lat;
 
       document.getElementById("bikeStation-information").innerHTML =
         "站點：" +
@@ -134,4 +137,44 @@ function restBike() {
         "<br />";
     })
     .catch((error) => console.error(error));
+}
+
+function getBus() {
+  fetch("/api/get_bus")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      //save stations info to browser's busStationList
+      busStationList = data.slice();
+    })
+    .catch((error) => console.error(error));
+}
+
+function updateBusRouteID() {
+  const selectList = document.getElementById("bus_type");
+  const selectedIndex = selectList.selectedIndex;
+  const selectedValue = selectList.options[selectedIndex].value;
+  const busRouteIDList = document.getElementById("bus_route_id");
+  busRouteIDList.innerHTML = "";
+  busRouteIDList.innerHTML = '<option value="none">請選擇公車路線</option>';
+  for (var i = 0; i < busStationList.length; i++) {
+    if (selectedValue == busStationList[i].type) {
+      var option = document.createElement("option");
+      option.value = busStationList[i].route_id;
+      option.text = busStationList[i].route_name;
+      busRouteIDList.add(option);
+    }
+  }
+}
+
+function getBusRouteURL() {
+  const busRouteIDList = document.getElementById("bus_route_id");
+  const selectedIndex = busRouteIDList.selectedIndex;
+  const selectedValue = busRouteIDList.options[selectedIndex].value;
+  bus_url = busStationList.find((x) => x.route_id == selectedValue).url;
+  console.log(bus_url);
+
+  document.getElementById("bus-iframe").src = bus_url;
+  document.getElementById("bus-iframe").style.display = "block";
 }

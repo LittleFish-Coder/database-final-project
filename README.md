@@ -12,46 +12,113 @@ Here are some tips for programming in each language and framework
 
 \*Some commands only work for MacOS using homebrew\*
 
-- install MySQL
+- homebrew services command
 
-```
-brew install mysql
-```
+  - install MySQL
 
-- run the server
+    ```
+    brew install mysql
+    ```
 
-```
-brew services start mysql
-```
+  - run the server
 
-- check server status
+    ```
+    brew services start mysql
+    ```
 
-```
-brew services list
-```
+  - check server status
 
-- stop the server
+    ```
+    brew services list
+    ```
 
-```
-brew services stop mysql
-```
+  - stop the server
 
-- login to database
+    ```
+    brew services stop mysql
+    ```
 
-```
-mysql -u root
-```
+- mysql command
 
-- exit database
+  - login to mysql
 
-```
-exit
-```
+    ```
+    mysql -u root
+    ```
+
+  - exit mysql
+
+    ```
+    exit
+    ```
+
+    ```
+    quit
+    ```
+
+  - show all the databases
+
+    ```
+    sql show databases;
+    ```
+
+  - create database
+
+    ```
+    create database database_final_project;
+    ```
+
+  - use database
+
+    ```
+    use database_final_project;
+    ```
+
+  - create table
+
+    ```
+    CREATE TABLE BIKE (
+      station_id INT,
+      bikes_capacity INT,
+      station_name VARCHAR(255),
+      station_address VARCHAR(255),
+      position_lon DECIMAL(9,6),
+      position_lat DECIMAL(9,6),
+      geo_hash VARCHAR(10)
+      primary key (station_id)
+    );
+    ```
+
+  - import csv to database
+
+    ! check the local_infile is disabled or enable
+
+    ```
+    show variables like 'local_infile';
+    ```
+
+    ```
+    set global local_infile = 1;
+    ```
+
+    ```
+    LOAD DATA LOCAL INFILE '/path/to/file.csv'
+    INTO TABLE TABLE_NAME
+    FIELDS TERMINATED BY ','
+    ENCLOSED BY '"'
+    LINES TERMINATED BY '\n'
+    IGNORE 1 ROWS;
+    ```
+
+  - show all tables
+
+    ```
+    show tables;
+    ```
 
 ### Gcloud Service
 
 - deploy service
-  
 
 - connect to mysql
   gcloud sql connect myinstance -u root
