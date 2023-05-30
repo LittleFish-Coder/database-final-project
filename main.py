@@ -4,6 +4,20 @@ import pandas as pd
 import json
 import requests
 import mysql.connector  # for connecting to mysql
+from datetime import timedelta
+
+
+class TimedeltaEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, timedelta):
+            # Format the timedelta object with leading zeros for hours, minutes, and seconds
+            hours = obj.seconds // 3600
+            minutes = (obj.seconds % 3600) // 60
+            seconds = obj.seconds % 60
+            formatted_time = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
+            return formatted_time
+        return super().default(obj)
+
 
 try:
     # configuration of db info
@@ -93,6 +107,12 @@ def bike():
 def like():
     return render_template('like.html')
 
+
+@app.route('/database/', methods=['GET'])
+def database():
+    return render_template('database.html')
+
+
 # API
 
 
@@ -168,6 +188,65 @@ def get_bus():
     # json.dumps() is used to convert a Python object into a json string
     json_data = json.dumps(json_array)
     return json_data
+
+
+@app.route('/api/get_train/', methods=['GET'])
+def get_train():
+    SQL = "SELECT * FROM TRAIN"
+    mycursor.execute(SQL)
+    data = mycursor.fetchall()
+    json_array = []
+    for row in data:
+        item = {
+            'station_id': row[0],
+            'station_address': row[1],
+            'station_phone': row[2],
+            'station_name': row[3]
+        }
+        json_array.append(item)
+
+    # json.dumps() is used to convert a Python object into a json string
+    json_data = json.dumps(json_array)
+    return json_data
+
+
+@app.route('/api/search_train', methods=['GET', 'POST'])
+def search_train():
+    data = request.get_json()
+    startID = data.get('startID')
+    startName = data.get('startName')
+    startIndex = data.get('startIndex')
+    destinationID = data.get('destinationID')
+    destinationName = data.get('destinationName')
+    destinationIndex = data.get('destinationIndex')
+    direction = destinationIndex - startIndex
+
+    #  direction > 0: southbound, direction < 0: northbound
+    table = 'TRAIN_SOUTH_STATION' if direction > 0 else 'TRAIN_NORTH_STATION'
+    SQL = '''
+        SELECT t1.train_id, t1.arr_time AS start_arr_time, t1.station_name AS start_station_name, t2.arr_time AS dest_arr_time, t2.station_name AS dest_station_name
+        FROM {} t1, {} t2
+        WHERE t1.station_name = '{}' AND t2.station_name = '{}' AND t1.train_id = t2.train_id
+        ORDER BY start_arr_time;
+        '''
+    SQL = SQL.format(table, table, startName, destinationName)
+    mycursor.execute(SQL)
+    data = mycursor.fetchall()
+
+    json_array = []
+    for row in data:
+        item = {
+            'trainID': row[0],
+            'startStation': row[2],
+            'startTime': row[1],
+            'destinationStation': row[4],
+            'destinationTime': row[3],
+            'duration': row[3] - row[1]
+        }
+        json_array.append(item)
+    json_data = json.dumps(json_array, cls=TimedeltaEncoder)
+    return json_data
+
 
 # some simple syntax for flask beginner
 

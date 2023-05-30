@@ -43,7 +43,7 @@ Here are some tips for programming in each language and framework
   - login to mysql
 
     ```
-    mysql -u root
+    mysql -u root -p
     ```
 
   - exit mysql
@@ -89,6 +89,12 @@ Here are some tips for programming in each language and framework
     );
     ```
 
+  - drop table
+
+    ```
+    drop table BIKE;
+    ```
+
   - import csv to database
 
     ! check the local_infile is disabled or enable
@@ -114,6 +120,12 @@ Here are some tips for programming in each language and framework
 
     ```
     show tables;
+    ```
+
+  - show table structure
+
+    ```
+    describe TABLE_NAME;
     ```
 
 ### Gcloud Service

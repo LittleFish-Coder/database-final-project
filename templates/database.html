@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../static/src/icon.jpg" />
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+    <script src="../static/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Database</title>
+  </head>
+  <body>
+    <script>
+      window.onload = function () {
+        showBikeTable();
+      };
+    </script>
+    <div id="BUS-TABLE">
+      <h3>BUS TABLE</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>route_id</th>
+            <th>url</th>
+            <th>type</th>
+            <th>type_zh</th>
+            <th>route_name</th>
+          </tr>
+        </thead>
+        <tbody id="BUS-TABLE-tbody"></tbody>
+      </table>
+    </div>
+    <br />
+    <div id="TRAIN-TABLE">
+      <h3>TRAIN TABLE</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>station_id</th>
+            <th>station_address</th>
+            <th>station_phone</th>
+            <th>station_name</th>
+          </tr>
+        </thead>
+        <tbody id="TRAIN-TABLE-tbody"></tbody>
+      </table>
+    </div>
+    <br />
+    <div id="TRAIN_NORTH_STATION-TABLE">
+      <h3>TRAIN_NORTH_STATION TABLE</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>station_id</th>
+            <th>train_id</th>
+            <th>order_num</th>
+            <th>arr_time</th>
+            <th>station_name</th>
+          </tr>
+        </thead>
+        <tbody id="TRAIN_NORTH_STATION-TABLE-tbody"></tbody>
+      </table>
+    </div>
+    <br />
+    <div id="TRAIN_SOUTH_STATION-TABLE">
+      <h3>TRAIN_SOUTH_STATION TABLE</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>station_id</th>
+            <th>train_id</th>
+            <th>order_num</th>
+            <th>arr_time</th>
+            <th>station_name</th>
+          </tr>
+        </thead>
+        <tbody id="TRAIN_SOUTH_STATION-TABLE-tbody"></tbody>
+      </table>
+    </div>
+    <br />
+    <div id="BIKE-TABLE">
+      <h3>BIKE TABLE</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>station_id</th>
+            <th>bikes_capacity</th>
+            <th>station_name</th>
+            <th>station_address</th>
+            <th>position_lon</th>
+            <th>position_lat</th>
+            <th>geohash</th>
+          </tr>
+        </thead>
+        <tbody id="BIKE-TABLE-tbody"></tbody>
+      </table>
+    </div>
+  </body>
+</html>
