@@ -115,12 +115,30 @@ def database():
 
 # API
 
+@app.route('/api/get_bus/', methods=['GET'])
+def get_bus():
+    SQL = "SELECT * FROM BUS"
+    mycursor.execute(SQL)
+    data = mycursor.fetchall()
+
+    json_array = []
+    for row in data:
+        item = {
+            'route_id': row[0],
+            'url': row[1],
+            'type': row[2],
+            'type_zh': row[3],
+            'route_name': row[4],
+        }
+        json_array.append(item)
+
+    # json.dumps() is used to convert a Python object into a json string
+    json_data = json.dumps(json_array)
+    return json_data
+
 
 @app.route('/api/get_bike/', methods=['GET'])
 def get_bike():
-    # bike = pd.read_csv('./data/bike.csv')
-    # json_array = bike[['station_id', 'bikes_capacity', 'station_name', 'station_address',
-    #                    'position_lon', 'position_lat', 'geo_hash']].to_json(orient='records')
 
     SQL = "SELECT * FROM BIKE"
     mycursor.execute(SQL)
@@ -168,25 +186,47 @@ def rest_bike(stationID):
     return None
 
 
-@app.route('/api/get_bus/', methods=['GET'])
-def get_bus():
-    SQL = "SELECT * FROM BUS"
+@app.route('/api/like_bike/', methods=['POST'])
+def like_bike():
+    data = request.get_json()
+    station_id = data['stationID']
+    print(station_id)
+    SQL = '''
+    INSERT INTO LIKE_BIKE (station_id, station_name, station_address)
+    SELECT station_id, station_name, station_address
+    FROM BIKE
+    WHERE station_id = %s
+    '''
+    mycursor.execute(SQL, (station_id,))
+    mydb.commit()
+
+    SQL = "SELECT * FROM LIKE_BIKE"
+    mycursor.execute(SQL)
+    data = mycursor.fetchall()
+    for x in data:
+        print(x)
+    return jsonify({'status': 'success'})
+
+
+@app.route('/api/get_like_bike', methods=['GET', 'POST'])
+def get_like_bike():
+    SQL = "SELECT * FROM LIKE_BIKE"
     mycursor.execute(SQL)
     data = mycursor.fetchall()
 
     json_array = []
     for row in data:
         item = {
-            'route_id': row[0],
-            'url': row[1],
-            'type': row[2],
-            'type_zh': row[3],
-            'route_name': row[4],
+            'station_id': row[0],
+            'station_name': row[1],
+            'station_address': row[2],
+            'notes': row[3]
         }
         json_array.append(item)
 
     # json.dumps() is used to convert a Python object into a json string
     json_data = json.dumps(json_array)
+
     return json_data
 
 
@@ -247,6 +287,118 @@ def search_train():
     json_data = json.dumps(json_array, cls=TimedeltaEncoder)
     return json_data
 
+
+@app.route('/api/like_train/', methods=['POST'])
+def like_train():
+    data = request.get_json()
+    train = data['train']
+    print(train['trainID'])
+    train_id = train['trainID']
+    start_station = train['startStation']
+    destination_station = train['destinationStation']
+    start_time = train['startTime']
+    destination_time = train['destinationTime']
+    duration = train['duration']
+
+    # Check if the data already exists
+    SQL = '''
+    SELECT * FROM LIKE_TRAIN
+    WHERE train_id = %s AND start_station = %s AND destination_station = %s AND start_time = %s AND destination_time = %s AND duration = %s
+    '''
+    mycursor.execute(SQL, (train_id, start_station,
+                     destination_station, start_time, destination_time, duration))
+    result = mycursor.fetchall()
+
+    if result:
+        # Data already exists, do not insert
+        print("Data already exists, not performing insertion")
+    else:
+        # Data does not exist, perform the insertion
+        SQL = '''
+        INSERT INTO LIKE_TRAIN (train_id, start_station, destination_station, start_time, destination_time, duration)
+        VALUES (%s, %s, %s, %s, %s, %s)
+        '''
+        mycursor.execute(SQL, (train_id, start_station,
+                         destination_station, start_time, destination_time, duration))
+        mydb.commit()
+
+        SQL = "SELECT * FROM LIKE_TRAIN"
+        mycursor.execute(SQL)
+        data = mycursor.fetchall()
+        for x in data:
+            print(x)
+    return jsonify({'status': 'success'})
+
+
+@app.route('/api/get_like_train', methods=['GET', 'POST'])
+def get_like_train():
+    SQL = "SELECT * FROM LIKE_TRAIN"
+    mycursor.execute(SQL)
+    data = mycursor.fetchall()
+
+    json_array = []
+    for row in data:
+        item = {
+            'train_id': row[0],
+            'start_station': row[1],
+            'destination_station': row[2],
+            'start_time': row[3],
+            'destination_time': row[4],
+            'duration': row[5]
+        }
+        json_array.append(item)
+
+    # json.dumps() is used to convert a Python object into a json string
+    json_data = json.dumps(json_array)
+
+    return json_data
+
+# UPDATE
+
+
+@app.route('/api/update_bike/<stationID>', methods=['PUT'])
+def update_bike(stationID):
+    data = request.get_json()
+    notes = data.get('notes')
+    SQL = '''
+        UPDATE LIKE_BIKE
+        SET notes = '{}'
+        WHERE station_id = {}
+        '''
+    SQL = SQL.format(notes, stationID)
+    mycursor.execute(SQL)
+    mydb.commit()
+    return {"message": f'Updated station with id: {stationID}'}
+
+
+# DELETE
+
+@app.route('/api/delete_bike/<stationID>', methods=['DELETE'])
+def delete_bike(stationID):
+    # Perform deletion logic here using the provided stationID
+    SQL = '''
+        DELETE FROM LIKE_BIKE
+        WHERE station_id = {}
+        '''
+    SQL = SQL.format(stationID)
+    mycursor.execute(SQL)
+
+    return {"message": f'Deleted station with id: {stationID}'}
+
+
+@app.route('/api/delete_train/', methods=['DELETE'])
+def delete_train():
+    data = request.get_json()
+    print(data)
+    SQL = '''
+    DELETE FROM LIKE_TRAIN
+    WHERE train_id = {} AND start_station = '{}' AND destination_station = '{}' AND start_time = '{}' AND destination_time = '{}' AND duration = '{}'
+    '''
+    SQL = SQL.format(data['train_id'], data['start_station'], data['destination_station'],
+                     data['start_time'], data['destination_time'], data['duration'])
+    mycursor.execute(SQL)
+    mydb.commit()
+    return {"message": "Deleted train"}
 
 # some simple syntax for flask beginner
 

@@ -5,7 +5,7 @@ var busStationList = [];
 var trainStaionList = [];
 var route_url = null;
 
-function getBike() {
+async function getBike() {
   fetch("/api/get_bike")
     .then((response) => response.json())
     .then((data) => {
@@ -24,8 +24,47 @@ function getBike() {
         option.text = data[i].station_name;
         selectList.add(option);
       }
+      showBike();
     })
     .catch((error) => console.error(error));
+}
+
+function showBike() {
+  if (bikeStationList.length == 0) {
+    console.log("bikeStationList is null");
+  }
+  bikeStaionBody = $("#bike-station-tbody");
+  bikeStaionBody.empty();
+  for (i = 0; i < bikeStationList.length; i++) {
+    const bikeStation = bikeStationList[i].station_name;
+    const bikeAddress = bikeStationList[i].station_address;
+    const bikeCapacity = bikeStationList[i].bikes_capacity;
+    const stationID = bikeStationList[i].station_id;
+
+    // add favorite button
+    // Create a button element using jQuery
+    var favorite = $("<button>");
+
+    // Set attributes or properties for the button using jQuery's chaining
+    favorite
+      .text("Like")
+      .attr("id", "myButton")
+      .data("stationID", stationID)
+      .click(function () {
+        var stationID = $(this).data("stationID");
+        console.log("Clicked button with station ID: " + stationID);
+        likeBike(stationID);
+      });
+
+    const tableRow = $("<tr>");
+    const tableData1 = $("<td>").text(bikeStation);
+    const tableData2 = $("<td>").text(bikeAddress);
+    const tableData3 = $("<td>").text(bikeCapacity);
+    const tableData4 = $("<td>").append(favorite);
+
+    tableRow.append(tableData1, tableData2, tableData3, tableData4);
+    bikeStaionBody.append(tableRow);
+  }
 }
 
 function restBike() {
@@ -168,13 +207,27 @@ function searchTrain() {
           continue;
         }
 
+        // Create a button element using jQuery
+        var favorite = $("<button>");
+
+        // Set attributes or properties for the button using jQuery's chaining
+        favorite
+          .text("Like")
+          .data("info", json[i])
+          .click(function () {
+            var train = $(this).data("info");
+            console.log("Clicked button with data: " + JSON.stringify(train));
+            likeTrain(train);
+          });
+
         const tableRow = $("<tr>");
         const tableData1 = $("<td>").text(trainID);
         const tableData2 = $("<td>").text(startStation);
-        const tableData3 = $("<td>").text(startTime);
-        const tableData4 = $("<td>").text(destinationStation);
+        const tableData3 = $("<td>").text(destinationStation);
+        const tableData4 = $("<td>").text(startTime);
         const tableData5 = $("<td>").text(destinationTime);
         const tableData6 = $("<td>").text(duration);
+        const tableData7 = $("<td>").append(favorite);
 
         tableRow.append(
           tableData1,
@@ -182,7 +235,8 @@ function searchTrain() {
           tableData3,
           tableData4,
           tableData5,
-          tableData6
+          tableData6,
+          tableData7
         );
         trainTimeTable.append(tableRow);
       }
@@ -220,6 +274,232 @@ function getBusRouteURL() {
 
   document.getElementById("bus-iframe").src = bus_url;
   document.getElementById("bus-iframe").style.display = "block";
+}
+
+function likeBike(stationID) {
+  console.log(stationID);
+  data = { stationID: stationID };
+  fetch("/api/like_bike", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Failed to submit data");
+      }
+    })
+    .then((json) => {
+      console.log(json);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
+function getLikeBike() {
+  fetch("/api/get_like_bike")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      const likeBikeStation = data;
+      var likeBikeTable = $("#like-bike-table");
+      likeBikeTable.empty();
+      for (i = 0; i < likeBikeStation.length; i++) {
+        const stationID = likeBikeStation[i].station_id;
+        const stationName = likeBikeStation[i].station_name;
+        const stationAddress = likeBikeStation[i].station_address;
+        const stationNotes = likeBikeStation[i].notes;
+
+        // add favorite button
+        // Create a button element using jQuery
+        var notesField = $("<input>");
+        var deleteBtn = $("<button>");
+        var updateBtn = $("<button>");
+
+        notesField.attr("id", stationID + "-notes").val(stationNotes);
+
+        // Set attributes or properties for the button using jQuery's chaining
+        deleteBtn
+          .text("Delete")
+          .data("stationID", stationID)
+          .click(function () {
+            var stationID = $(this).data("stationID");
+            console.log("Clicked button with station ID: " + stationID);
+            deleteBike(stationID);
+          });
+
+        updateBtn
+          .text("Update")
+          .data("stationID", stationID)
+          .click(function () {
+            var stationID = $(this).data("stationID");
+            console.log("Clicked button with station ID: " + stationID);
+            updateBike(stationID, $(`#${stationID}-notes`).val());
+          });
+
+        const tableRow = $("<tr>");
+        const tableData1 = $("<td>").text(stationName);
+        const tableData2 = $("<td>").text(stationAddress);
+        const tableData3 = $("<td>").append(notesField);
+        const tableData4 = $("<td>").append(deleteBtn);
+        const tableData5 = $("<td>").append(updateBtn);
+
+        tableRow.append(
+          tableData1,
+          tableData2,
+          tableData3,
+          tableData4,
+          tableData5
+        );
+        likeBikeTable.append(tableRow);
+      }
+      getLikeTrain();
+    })
+    .catch((error) => console.error(error));
+}
+
+function deleteBike(stationID) {
+  fetch("/api/delete_bike/" + stationID, {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Failed to submit data");
+      }
+    })
+    .then((json) => {
+      console.log(json);
+      location.reload();
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
+function updateBike(stationID, notes) {
+  fetch("/api/update_bike/" + stationID, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ notes: notes }),
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Failed to submit data");
+      }
+    })
+    .then((json) => {
+      console.log(json);
+      location.reload();
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
+function likeTrain(train) {
+  console.log(train);
+  data = { train: train };
+  fetch("/api/like_train", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Failed to submit data");
+      }
+    })
+    .then((json) => {
+      console.log(json);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
+function getLikeTrain() {
+  fetch("/api/get_like_train")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      const likeTrainStation = data;
+      var likeTrainTable = $("#like-train-table");
+      likeTrainTable.empty();
+      for (i = 0; i < likeTrainStation.length; i++) {
+        const trainID = likeTrainStation[i].train_id;
+        const startStation = likeTrainStation[i].start_station;
+        const destinationStation = likeTrainStation[i].destination_station;
+        const startTime = likeTrainStation[i].start_time;
+        const destinationTime = likeTrainStation[i].destination_time;
+        const duration = likeTrainStation[i].duration;
+
+        // Create a button element using jQuery
+        var deleteBtn = $("<button>");
+
+        // Set attributes or properties for the button using jQuery's chaining
+        deleteBtn
+          .text("Delete")
+          .data("train", likeTrainStation[i])
+          .click(function () {
+            var train = $(this).data("train");
+            console.log("Clicked button with train: " + JSON.stringify(train));
+            deleteTrain(train);
+          });
+
+        const tableRow = $("<tr>");
+        const tableData1 = $("<td>").text(trainID);
+        const tableData2 = $("<td>").text(startStation);
+        const tableData3 = $("<td>").text(destinationStation);
+        const tableData4 = $("<td>").text(startTime);
+        const tableData5 = $("<td>").text(destinationTime);
+        const tableData6 = $("<td>").text(duration);
+        const tableData7 = $("<td>").append(deleteBtn);
+
+        tableRow.append(
+          tableData1,
+          tableData2,
+          tableData3,
+          tableData4,
+          tableData5,
+          tableData6,
+          tableData7
+        );
+        likeTrainTable.append(tableRow);
+      }
+    })
+    .catch((error) => console.error(error));
+}
+
+function deleteTrain(train) {
+  fetch("/api/delete_train/", {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(train),
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Failed to submit data");
+      }
+    })
+    .then((json) => {
+      console.log(json);
+      location.reload();
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 }
 
 function showBusTABLE() {}

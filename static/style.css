@@ -106,3 +106,17 @@ td {
   padding: 8px;
   text-align: center;
 }
+
+.left-container {
+  float: left;
+  width: 50%; /* Adjust the width as needed */
+  display: flex;
+  justify-content: center;
+}
+
+.right-container {
+  float: right;
+  width: 50%; /* Adjust the width as needed */
+  display: flex;
+  justify-content: center;
+}
