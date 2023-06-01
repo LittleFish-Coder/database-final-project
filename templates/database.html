@@ -12,10 +12,59 @@
   </head>
   <body>
     <script>
+      var tableName = [
+        "BUS",
+        "TRAIN",
+        "TRAIN_NORTH_STATION",
+        "TRAIN_SOUTH_STATION",
+        "BIKE",
+        "LIKE_BUS",
+        "LIKE_TRAIN",
+        "LIKE_BIKE",
+      ];
+      $(document).ready(function () {
+        const checkboxContainer = $("#checkboxContainer");
+
+        for (let i = 0; i < tableName.length; i++) {
+          const checkbox = $("<input>").attr({
+            type: "checkbox",
+            id: tableName[i],
+            checked: true, // Set the 'checked' attribute to 'true'
+          });
+
+          const label = $("<label>")
+            .attr("for", tableName[i])
+            .text(tableName[i]);
+
+          checkboxContainer.append(checkbox, label, $("<br>"));
+          checkbox.on("click", function () {
+            if ($(this).is(":checked")) {
+              console.log("Checkbox " + tableName[i] + " is checked");
+              table = tableName[i] + "-TABLE";
+              $(`#${table}`).show();
+              // Perform actions when checkbox is checked
+            } else {
+              console.log("Checkbox " + tableName[i] + " is not checked");
+              table = tableName[i] + "-TABLE";
+              $(`#${table}`).hide();
+              // Perform actions when checkbox is not checked
+            }
+          });
+        }
+      });
       window.onload = function () {
         showBikeTable();
+        setTimeout(showTrainTable, 1000);
+        setTimeout(showBusTable, 2000);
+        setTimeout(showTrainNorthStationTable, 3000);
+        setTimeout(showTrainSouthStationTable, 4000);
+        setTimeout(showLikeBusTable, 5000);
+        setTimeout(showLikeTrainTable, 6000);
+        setTimeout(showLikeBikeTable, 7000);
       };
     </script>
+    <div id="checkboxContainer"></div>
+
     <div id="BUS-TABLE">
       <h3>BUS TABLE</h3>
       <table>
@@ -94,6 +143,54 @@
           </tr>
         </thead>
         <tbody id="BIKE-TABLE-tbody"></tbody>
+      </table>
+    </div>
+
+    <div id="LIKE_BUS-TABLE">
+      <h3>LIKE_BUS TABLE</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>route_id</th>
+            <th>route_name</th>
+            <th>type</th>
+            <th>type_zh</th>
+            <th>url</th>
+          </tr>
+        </thead>
+        <tbody id="LIKE_BUS-TABLE-tbody"></tbody>
+      </table>
+    </div>
+
+    <div id="LIKE_TRAIN-TABLE">
+      <h3>LIKE_TRAIN TABLE</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>train_id</th>
+            <th>start_Station</th>
+            <th>destination_station</th>
+            <th>start_time</th>
+            <th>destination_time</th>
+            <th>duration</th>
+          </tr>
+        </thead>
+        <tbody id="LIKE_TRAIN-TABLE-tbody"></tbody>
+      </table>
+    </div>
+
+    <div id="LIKE_BIKE-TABLE">
+      <h3>LIKE_BIKE TABLE</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>station_id</th>
+            <th>station_name</th>
+            <th>station_address</th>
+            <th>notes</th>
+          </tr>
+        </thead>
+        <tbody id="LIKE_BIKE-TABLE-tbody"></tbody>
       </table>
     </div>
   </body>

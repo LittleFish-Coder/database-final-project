@@ -89,5 +89,23 @@
         </table>
       </div>
     </div>
+    <div id="like-bus-container" class="bottom-container" style="display: flex">
+      <div>
+        <p>我的最愛公車</p>
+        <select id="like-bus-select" onchange="showLikeBus()">
+          <option value="0">路線</option>
+        </select>
+        <button onclick="deleteBus()">Delete</button>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <iframe
+          id="bus-iframe"
+          src=""
+          width="80%"
+          height="80%"
+          style="display: none; position: absolute"
+        ></iframe>
+      </div>
+    </div>
   </body>
 </html>

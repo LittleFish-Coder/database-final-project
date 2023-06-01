@@ -276,6 +276,98 @@ function getBusRouteURL() {
   document.getElementById("bus-iframe").style.display = "block";
 }
 
+function likeBus() {
+  const routeID = document.getElementById("bus_route_id").value;
+  const bus = busStationList.find((obj) => obj.route_id === routeID);
+
+  console.log(routeID, bus);
+  // data = {
+  //   routeID: bus.route_id,
+  //   route_name: bus.route_name,
+  //   type: bus.type,
+  //   type_zh: bus.type_zh,
+  //   url: bus.url,
+  // };
+
+  fetch("/api/like_bus/", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(bus),
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Failed to submit data");
+      }
+    })
+    .then((json) => {
+      console.log(json);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
+function getLikeBus() {
+  fetch("/api/get_like_bus")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      const likeBusSelect = $("#like-bus-select");
+      likeBusSelect.empty();
+      var option = $("<option>");
+      option.text(`請選擇公車路線`);
+      option.val("none");
+      likeBusSelect.append(option);
+      for (var i = 0; i < data.length; i++) {
+        const routeName = data[i].route_name;
+        const url = data[i].url;
+
+        var option = $("<option>");
+        option.text(routeName);
+        option.val(url);
+        likeBusSelect.append(option);
+      }
+    })
+    .catch((error) => console.error(error));
+}
+
+function showLikeBus() {
+  const url = document.getElementById("like-bus-select").value;
+  console.log(url);
+  document.getElementById("bus-iframe").src = url;
+  if (url == "none") {
+    document.getElementById("bus-iframe").style.display = "none";
+  } else {
+    document.getElementById("bus-iframe").style.display = "block";
+  }
+}
+
+function deleteBus() {
+  const route_name = $("#like-bus-select option:selected").text();
+  console.log(route_name);
+  fetch("/api/delete_bus", {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ route_name: route_name }),
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Failed to submit data");
+      }
+    })
+    .then((json) => {
+      console.log(json);
+      location.reload();
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
 function likeBike(stationID) {
   console.log(stationID);
   data = { stationID: stationID };
@@ -476,6 +568,7 @@ function getLikeTrain() {
         );
         likeTrainTable.append(tableRow);
       }
+      getLikeBus();
     })
     .catch((error) => console.error(error));
 }
@@ -502,13 +595,71 @@ function deleteTrain(train) {
     });
 }
 
-function showBusTABLE() {}
+function showBusTable() {
+  fetch("/api/get_bus")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
 
-function showTrainTABLE() {}
+      var table = $("#BUS-TABLE-tbody");
+      table.empty();
 
-function showTrainNorthStationTable() {}
+      // Loop through the array and create an option element for each object
+      for (var i = 0; i < data.length; i++) {
+        const route_id = data[i].route_id;
+        const url = data[i].url;
+        const type = data[i].type;
+        const type_zh = data[i].type_zh;
+        const route_name = data[i].route_name;
 
-function showTrainSouthStationTable() {}
+        const tableRow = $("<tr>");
+        const tableData1 = $("<td>").text(route_id);
+        const tableData2 = $("<td>").text(url);
+        const tableData3 = $("<td>").text(type);
+        const tableData4 = $("<td>").text(type_zh);
+        const tableData5 = $("<td>").text(route_name);
+
+        tableRow.append(
+          tableData1,
+          tableData2,
+          tableData3,
+          tableData4,
+          tableData5
+        );
+        table.append(tableRow);
+      }
+    })
+    .catch((error) => console.error(error));
+}
+
+function showTrainTable() {
+  fetch("/api/get_train")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      var table = $("#TRAIN-TABLE-tbody");
+      table.empty();
+
+      // Loop through the array and create an option element for each object
+      for (var i = 0; i < data.length; i++) {
+        const station_id = data[i].station_id;
+        const station_address = data[i].station_address;
+        const station_phone = data[i].station_phone;
+        const station_name = data[i].station_name;
+
+        const tableRow = $("<tr>");
+        const tableData1 = $("<td>").text(station_id);
+        const tableData2 = $("<td>").text(station_address);
+        const tableData3 = $("<td>").text(station_phone);
+        const tableData4 = $("<td>").text(station_name);
+
+        tableRow.append(tableData1, tableData2, tableData3, tableData4);
+        table.append(tableRow);
+      }
+    })
+    .catch((error) => console.error(error));
+}
 
 function showBikeTable() {
   fetch("/api/get_bike")
@@ -516,8 +667,8 @@ function showBikeTable() {
     .then((data) => {
       console.log(data);
 
-      var bikeTable = $("#BIKE-TABLE-tbody");
-      bikeTable.empty();
+      var table = $("#BIKE-TABLE-tbody");
+      table.empty();
 
       // Loop through the array and create an option element for each object
       for (var i = 0; i < data.length; i++) {
@@ -547,7 +698,187 @@ function showBikeTable() {
           tableData6,
           tableData7
         );
-        bikeTable.append(tableRow);
+        table.append(tableRow);
+      }
+    })
+    .catch((error) => console.error(error));
+}
+
+function showTrainNorthStationTable() {
+  fetch("/api/get_train_north_station")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      var table = $("#TRAIN_NORTH_STATION-TABLE-tbody");
+      table.empty();
+
+      // Loop through the array and create an option element for each object
+      for (var i = 0; i < data.length; i++) {
+        const station_id = data[i].station_id;
+        const train_id = data[i].train_id;
+        const order_num = data[i].order_num;
+        const arr_time = data[i].arr_time;
+        const station_name = data[i].station_name;
+
+        const tableRow = $("<tr>");
+        const tableData1 = $("<td>").text(station_id);
+        const tableData2 = $("<td>").text(train_id);
+        const tableData3 = $("<td>").text(order_num);
+        const tableData4 = $("<td>").text(arr_time);
+        const tableData5 = $("<td>").text(station_name);
+
+        tableRow.append(
+          tableData1,
+          tableData2,
+          tableData3,
+          tableData4,
+          tableData5
+        );
+        table.append(tableRow);
+      }
+    })
+    .catch((error) => console.error(error));
+}
+
+function showTrainSouthStationTable() {
+  fetch("/api/get_train_south_station")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      var table = $("#TRAIN_SOUTH_STATION-TABLE-tbody");
+      table.empty();
+
+      // Loop through the array and create an option element for each object
+      for (var i = 0; i < data.length; i++) {
+        const station_id = data[i].station_id;
+        const train_id = data[i].train_id;
+        const order_num = data[i].order_num;
+        const arr_time = data[i].arr_time;
+        const station_name = data[i].station_name;
+
+        const tableRow = $("<tr>");
+        const tableData1 = $("<td>").text(station_id);
+        const tableData2 = $("<td>").text(train_id);
+        const tableData3 = $("<td>").text(order_num);
+        const tableData4 = $("<td>").text(arr_time);
+        const tableData5 = $("<td>").text(station_name);
+
+        tableRow.append(
+          tableData1,
+          tableData2,
+          tableData3,
+          tableData4,
+          tableData5
+        );
+        table.append(tableRow);
+      }
+    })
+    .catch((error) => console.error(error));
+}
+
+function showLikeBusTable() {
+  fetch("/api/get_like_bus")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      var table = $("#LIKE_BUS-TABLE-tbody");
+      table.empty();
+
+      // Loop through the array and create an option element for each object
+      for (var i = 0; i < data.length; i++) {
+        const route_id = data[i].route_id;
+        const route_name = data[i].route_name;
+        const type = data[i].type;
+        const type_zh = data[i].type_zh;
+        const url = data[i].url;
+
+        const tableRow = $("<tr>");
+        const tableData1 = $("<td>").text(route_id);
+        const tableData2 = $("<td>").text(route_name);
+        const tableData3 = $("<td>").text(type);
+        const tableData4 = $("<td>").text(type_zh);
+        const tableData5 = $("<td>").text(url);
+
+        tableRow.append(
+          tableData1,
+          tableData2,
+          tableData3,
+          tableData4,
+          tableData5
+        );
+        table.append(tableRow);
+      }
+    })
+    .catch((error) => console.error(error));
+}
+
+function showLikeTrainTable() {
+  fetch("/api/get_like_train")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      var table = $("#LIKE_TRAIN-TABLE-tbody");
+      table.empty();
+
+      // Loop through the array and create an option element for each object
+      for (var i = 0; i < data.length; i++) {
+        const route_id = data[i].train_id;
+        const start_station = data[i].start_station;
+        const destination_station = data[i].destination_station;
+        const start_time = data[i].start_time;
+        const destination_time = data[i].destination_time;
+        const duration = data[i].duration;
+
+        const tableRow = $("<tr>");
+        const tableData1 = $("<td>").text(route_id);
+        const tableData2 = $("<td>").text(start_station);
+        const tableData3 = $("<td>").text(destination_station);
+        const tableData4 = $("<td>").text(start_time);
+        const tableData5 = $("<td>").text(destination_time);
+        const tableData6 = $("<td>").text(duration);
+
+        tableRow.append(
+          tableData1,
+          tableData2,
+          tableData3,
+          tableData4,
+          tableData5,
+          tableData6
+        );
+        table.append(tableRow);
+      }
+    })
+    .catch((error) => console.error(error));
+}
+
+function showLikeBikeTable() {
+  fetch("/api/get_like_bike")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      var table = $("#LIKE_BIKE-TABLE-tbody");
+      table.empty();
+
+      // Loop through the array and create an option element for each object
+      for (var i = 0; i < data.length; i++) {
+        const station_id = data[i].station_id;
+        const station_name = data[i].station_name;
+        const station_address = data[i].station_address;
+        const notes = data[i].notes;
+
+        const tableRow = $("<tr>");
+        const tableData1 = $("<td>").text(station_id);
+        const tableData2 = $("<td>").text(station_name);
+        const tableData3 = $("<td>").text(station_address);
+        const tableData4 = $("<td>").text(notes);
+
+        tableRow.append(tableData1, tableData2, tableData3, tableData4);
+        table.append(tableRow);
       }
     })
     .catch((error) => console.error(error));

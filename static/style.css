@@ -120,3 +120,11 @@ td {
   display: flex;
   justify-content: center;
 }
+
+.bottom-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; /* Change flex direction to column */
+  align-items: center; /* Center items horizontally */
+}

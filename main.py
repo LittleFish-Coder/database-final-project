@@ -137,6 +137,44 @@ def get_bus():
     return json_data
 
 
+@app.route('/api/like_bus/', methods=['GET', 'POST'])
+def like_bus():
+    bus = request.get_json()
+    print(bus)
+    SQL = '''
+        INSERT INTO LIKE_BUS (route_id, route_name, type, type_zh, url)
+        VALUES ('{}', '{}', '{}', '{}', '{}')
+    '''
+    SQL = SQL.format(bus['route_id'], bus['route_name'], bus['type'],
+                     bus['type_zh'], bus['url'])
+    mycursor.execute(SQL)
+    mydb.commit()
+
+    return {'status': 'success'}
+
+
+@app.route('/api/get_like_bus/', methods=['GET'])
+def get_like_bus():
+    SQL = "SELECT * FROM LIKE_BUS"
+    mycursor.execute(SQL)
+    data = mycursor.fetchall()
+
+    json_array = []
+    for row in data:
+        item = {
+            'route_id': row[0],
+            'route_name': row[1],
+            'type': row[2],
+            'type_zh': row[3],
+            'url': row[4],
+        }
+        json_array.append(item)
+
+    # json.dumps() is used to convert a Python object into a json string
+    json_data = json.dumps(json_array)
+    return json_data
+
+
 @app.route('/api/get_bike/', methods=['GET'])
 def get_bike():
 
@@ -373,6 +411,19 @@ def update_bike(stationID):
 
 # DELETE
 
+@app.route('/api/delete_bus/', methods=['DELETE'])
+def delete_bus():
+    data = request.get_json()
+    print(data)
+    SQL = '''
+    DELETE FROM LIKE_BUS
+    WHERE route_name = '{}'
+    '''
+    SQL = SQL.format(data['route_name'])
+    mycursor.execute(SQL)
+    return {"message": f'Deleted bus with route_name: {data["route_name"]}'}
+
+
 @app.route('/api/delete_bike/<stationID>', methods=['DELETE'])
 def delete_bike(stationID):
     # Perform deletion logic here using the provided stationID
@@ -399,6 +450,50 @@ def delete_train():
     mycursor.execute(SQL)
     mydb.commit()
     return {"message": "Deleted train"}
+
+
+# get other data
+@app.route('/api/get_train_north_station/', methods=['GET'])
+def get_train_north_station():
+    SQL = '''
+    SELECT * FROM TRAIN_NORTH_STATION
+    '''
+    mycursor.execute(SQL)
+    data = mycursor.fetchall()
+    json_array = []
+    for row in data:
+        item = {
+            'station_id': row[0],
+            'train_id': row[1],
+            'order_num': row[2],
+            'arr_time': row[3],
+            'station_name': row[4]
+        }
+        json_array.append(item)
+    # json_data = json.dumps(json_array)
+    json_data = json.dumps(json_array, cls=TimedeltaEncoder)
+    return json_data
+
+
+@app.route('/api/get_train_south_station/', methods=['GET'])
+def get_train_south_station():
+    SQL = '''
+    SELECT * FROM TRAIN_SOUTH_STATION
+    '''
+    mycursor.execute(SQL)
+    data = mycursor.fetchall()
+    json_array = []
+    for row in data:
+        item = {
+            'station_id': row[0],
+            'train_id': row[1],
+            'order_num': row[2],
+            'arr_time': row[3],
+            'station_name': row[4]
+        }
+        json_array.append(item)
+    json_data = json.dumps(json_array, cls=TimedeltaEncoder)
+    return json_data
 
 # some simple syntax for flask beginner
 
