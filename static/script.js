@@ -1,4 +1,4 @@
-var mapsAPIKey = "AIzaSyC2Z_1g1BlZ_mHK2d9sB2eRNoZb8OxqZ1k";
+// var mapsAPIKey = "AIzaSyC2Z_1g1BlZ_mHK2d9sB2eRNoZb8OxqZ1k";
 var testData;
 var bikeStationList = [];
 var busStationList = [];
@@ -82,29 +82,11 @@ function restBike() {
       posLat = bikeStationList[selectedIndex].position_lat;
 
       document.getElementById("bikeStation-information").innerHTML =
-        "站點：" +
-        stationName +
-        "<br />" +
-        "站點ID：" +
-        data["StationID"] +
-        "<br />" +
-        "地址：" +
-        stationAddress +
-        "<br />" +
-        "經度：" +
-        posLon +
-        "<br />" +
-        "緯度：" +
-        posLat +
-        "<br />" +
         "可租借車數: " +
         data["AvailableRentBikes"] +
         "<br />" +
-        "剩餘停車格:" +
-        data["AvailableReturnBikes"] +
-        "<br />" +
-        '<a href="https://tdx.transportdata.tw/api/basic/v2/Bike/Availability/City/Tainan">即時查詢自行車服務由TDX提供</a>' +
-        "<br />";
+        "剩餘停車格: " +
+        data["AvailableReturnBikes"];
     })
     .catch((error) => console.error(error));
 }
@@ -281,13 +263,6 @@ function likeBus() {
   const bus = busStationList.find((obj) => obj.route_id === routeID);
 
   console.log(routeID, bus);
-  // data = {
-  //   routeID: bus.route_id,
-  //   route_name: bus.route_name,
-  //   type: bus.type,
-  //   type_zh: bus.type_zh,
-  //   url: bus.url,
-  // };
 
   fetch("/api/like_bus/", {
     method: "POST",

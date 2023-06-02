@@ -21,40 +21,57 @@
         getBus();
       };
     </script>
-    <h2>公車系統</h2>
-    <nav>
-      <ul>
-        <li>
-          <a class="active" href="{{ url_for('index') }}"
-            ><img class="pic main" src="../static/src/main.png" /> 首頁</a
-          >
-        </li>
-        <li>
-          <a href="{{ url_for('bus') }}"
-            ><img class="pic bus" src="../static/src/公車.png" /> 公車時刻表</a
-          >
-        </li>
-        <li>
-          <a href="{{ url_for('train') }}"
-            ><img class="pic train" src="../static/src/火車.jfif" />
-            火車時刻表</a
-          >
-        </li>
-        <li>
-          <a href="{{ url_for('bike') }}"
-            ><img class="pic bike" src="../static/src/自行車.jpeg" />
-            自行車租借</a
-          >
-        </li>
-        <li>
-          <a href="{{ url_for('like') }}"
-            ><img class="pic contact" src="../static/src/like.jpg" />
-            我的最愛</a
-          >
-        </li>
-      </ul>
-    </nav>
-    <section>
+    <header>
+      <h2>公車系統</h2>
+      <nav>
+        <ul>
+          <li>
+            <a class="active" href="{{ url_for('index') }}"
+              ><img class="pic main" src="../static/src/main.png" /> 首頁</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('bus') }}"
+              ><img class="pic bus" src="../static/src/公車.png" />
+              公車時刻表</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('train') }}"
+              ><img class="pic train" src="../static/src/火車.jfif" />
+              火車時刻表</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('bike') }}"
+              ><img class="pic bike" src="../static/src/自行車.jpeg" />
+              自行車租借</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('like') }}"
+              ><img class="pic contact" src="../static/src/like.jpg" />
+              我的最愛</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('database') }}"
+              ><img class="pic database" src="../static/src/database.png" />
+              資料庫</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div
+      style="
+        display: flex;
+        margin-top: 5%;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+      "
+    >
       <select id="bus_type" onchange="updateBusRouteID()">
         <option value="none">請選擇公車類別</option>
         <option value="Green">綠線</option>
@@ -68,24 +85,43 @@
       <select id="bus_route_id">
         <option>請選擇公車路線</option>
       </select>
-      <button type="submit" class="btn" onclick="getBusRouteURL()">確認</button>
-      <button type="submit" class="btn" onclick="likeBus()">LIKE</button>
-    </section>
-    <img
-      src="../static/src/bus_demo.png"
-      alt="bus_table"
-      id="bus_table"
-      style="width: 100%; display: none; position: absolute; top: 50%"
-    />
+      <button
+        type="submit"
+        class="btn"
+        style="margin-right: 4rem"
+        onclick="getBusRouteURL()"
+      >
+        確認
+      </button>
 
-    <div class="bus-container">
+      <button type="submit" class="btn" onclick="likeBus()">LIKE</button>
+    </div>
+
+    <div
+      class="bus-container"
+      style="display: flex; justify-content: center; margin-top: 2rem"
+    >
       <iframe
         id="bus-iframe"
         src=""
-        width="100%"
-        height="100%"
-        style="display: none; position: absolute; top: 50%"
+        width="80%"
+        height="80%"
+        style="display: none; position: absolute"
       ></iframe>
     </div>
   </body>
+  <footer>
+    <p>
+      資料庫系統期末專案 Database System Final Project - 我管交通的啦 Traffic
+      Master
+    </p>
+    <p>第14組 - 組員</p>
+    <ul>
+      <li>R76111044 張宇晴</li>
+      <li>R76111052 陳于名</li>
+      <li>H54084010 陳冠言</li>
+      <li>H24081333 林家同</li>
+      <li>E14076423 許茗洋</li>
+    </ul>
+  </footer>
 </html>

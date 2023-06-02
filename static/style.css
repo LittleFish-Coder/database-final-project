@@ -5,8 +5,9 @@
   font-family: "Noto Sans TC", sans-serif;
 }
 header {
-  height: 100px;
+  height: 150px;
   width: 100%;
+  background-color: #f5f5f5;
 }
 h2 {
   position: absolute;
@@ -48,11 +49,6 @@ nav ul li a {
   font-size: 2rem;
 }
 
-section {
-  position: absolute;
-  top: 25%;
-  padding-left: 30rem;
-}
 select {
   margin-right: 4rem;
   padding: 0.5rem;
@@ -127,4 +123,47 @@ td {
   justify-content: center;
   flex-direction: column; /* Change flex direction to column */
   align-items: center; /* Center items horizontally */
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  padding-bottom: 100px; /* Adjust this value based on the footer's height */
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px; /* Adjust this value to set the footer's height */
+  background-color: #f5f5f5;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+
+footer ul li {
+  padding-left: 1rem;
+}
+
+#checkboxContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+#checkboxContainer input {
+  margin-left: 1rem;
 }
