@@ -1,6 +1,6 @@
-gunicorn
 flask
 flask-cors
+flask-mysql
 mysql-connector-python
 pandas
 requests

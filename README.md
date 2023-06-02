@@ -6,7 +6,32 @@ Here are some tips for programming in each language and framework
 
 ### Frontend: HTML CSS JavaScript
 
+- Make sure to embedd the follow code to use jQuery
+
+  ```
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  ```
+
 ### Backend: Python Flask
+
+- Modify the db info in main.py before you run the app
+  ```
+  mydb = mysql.connector.connect(
+          host="localhost",
+          user="root",
+          password="0000",
+          database="DATABASE_FINAL_PROJECT"
+      )
+  ```
+- Make sure you have installed all the required packages
+  ```
+  pip install flask
+  pip install mysql-connector-python
+  pip install flask-mysql
+  pip install flask-cors
+  pip install pandas
+  pip install requests
+  ```
 
 ### Database: MySQL Server
 
@@ -47,10 +72,6 @@ Here are some tips for programming in each language and framework
     ```
 
   - exit mysql
-
-    ```
-    exit
-    ```
 
     ```
     quit
@@ -112,7 +133,7 @@ Here are some tips for programming in each language and framework
     INTO TABLE TABLE_NAME
     FIELDS TERMINATED BY ','
     ENCLOSED BY '"'
-    LINES TERMINATED BY '\n'
+    LINES TERMINATED BY '\r\n'
     IGNORE 1 ROWS;
     ```
 
